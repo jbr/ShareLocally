@@ -12,13 +12,13 @@ class BrochureController < ApplicationController
       params[:page] = default
     end
     params[:action] = params[:page]
-    render :template => path and return if logged_in? || RAILS_ENV == 'development'
-    
-    page = Rails.cache.fetch path do
-      render_to_string :template => path
-    end
-    
-    render :text => page
+    render :template => path
+    # 
+    # page = Rails.cache.fetch path do
+    #   render_to_string :template => path
+    # end
+    # 
+    # render :text => page
   end
   
   def template_exists?(path)
