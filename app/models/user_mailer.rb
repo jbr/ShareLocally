@@ -14,11 +14,11 @@ class UserMailer < ActionMailer::Base
   protected
   
   def setup_email(user)
-    @recipients  = "#{user.email}"
-    @from        = "sharelocally"
-    @subject     = "[ShareLocally] "
-    @sent_on     = Time.now
-    @body[:user] = user
+    recipients "#{user.email}"
+    from "sharelocally"
+    subject "[ShareLocally] "
+    sent_on Time.now
+    body[:user] = user
   end
     
   def base_url
