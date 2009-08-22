@@ -2,6 +2,7 @@ require 'digest/sha1'
 
 class User < ActiveRecord::Base
   generate_url_param_from :login
+  acts_as_mappable
   
   has_one :profile
   has_many :items

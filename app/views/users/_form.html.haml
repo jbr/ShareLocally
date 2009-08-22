@@ -14,3 +14,11 @@
 %p
   = f.label :password_confirmation
   = f.password_field :password_confirmation
+
+%p
+  = f.label :address
+  = f.text_area :address
+%div
+  = link_to 'Why does ShareLocally need my address?', '#', :class => 'replacement'
+  %div{:style => 'display:none'}
+    ShareLocally is about location.
