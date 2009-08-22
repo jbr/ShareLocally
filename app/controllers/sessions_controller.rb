@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  before_filter :redirect_to_root, :if => :logged_in?
+  before_filter :redirect_to_root, :if => :logged_in?, :except => :destroy
   
   def create
     logout_keeping_session!

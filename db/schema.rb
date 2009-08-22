@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090822191420) do
+ActiveRecord::Schema.define(:version => 20090822203159) do
 
   create_table "items", :force => true do |t|
     t.string   "title"
@@ -41,6 +41,8 @@ ActiveRecord::Schema.define(:version => 20090822191420) do
     t.string   "state",                                    :default => "passive"
     t.datetime "deleted_at"
     t.string   "url_param"
+    t.string   "full_name"
+    t.string   "phone"
   end
 
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true

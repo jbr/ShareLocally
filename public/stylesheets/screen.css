@@ -59,15 +59,13 @@ q, blockquote {
 img a {
   border: none; }
 
-/* The *:focus rule is reset and suppresses link outlining.
- * You _must_ remember to redefine your own outline, as it’s an important accessibility aid. E.g. */
 /* line 1, ../../app/stylesheets/_global.sass */
 a, a:visited {
   color: blue; }
 
 /* line 4, ../../app/stylesheets/_global.sass */
 *:focus {
-  outline: #ccc dotted medium; }
+  outline: blue solid medium; }
 
 /* line 7, ../../app/stylesheets/_global.sass */
 body {
@@ -142,7 +140,8 @@ body.users h1 {
 /* line 7, ../../app/stylesheets/_users.sass */
 body.users #form {
   clear: both; }
+/* line 9, ../../app/stylesheets/_users.sass */
+body.users #profile-fields {
+  margin-top: 30px; }
 
-/* line 1, ../../app/stylesheets/_items.sass */
-#items {
-  clear: both; }
+@import url(_items.sas.css);

@@ -5,8 +5,16 @@
 #form
   - form_for @user do |f|
     = render :partial => 'users/form', :locals => {:f => f}
-    %p
-      - f.fields_for :profile do |profile|
-        = profile.label :about
-        = profile.text_area :about
+    #profile-fields
+      %p
+        = f.label :full_name
+        = f.text_field :full_name
+      %p
+        = f.label :phone
+        = f.text_field :phone
+    
+      %p
+        - f.fields_for :profile do |profile|
+          = profile.label :about
+          = profile.text_area :about
     = f.submit 'Save'
