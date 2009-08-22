@@ -1,4 +1,5 @@
 %ol
   - for item in @items
-    %li= link_to item.to_s, user_item_url(@user, item)
-=link_to 'New item', new_user_item_url(@user)
+    %li= link_to item.to_s, @user ? user_item_url(@user, item) : item_url(item)
+- if @user && @user == current_user
+  = link_to 'Share more!', new_user_item_url(@user) 

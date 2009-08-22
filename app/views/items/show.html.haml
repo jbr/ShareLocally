@@ -1,3 +1,5 @@
 = render :partial => 'items/item', :locals => {:item => @item}
-= link_to "All Items", user_items_url(@user)
-= link_to "Edit", edit_user_item_url(@user, @item)
+- if @user
+  = link_to "All of this user's items", user_items_url(@user)
+  - if @user == current_user
+    = link_to "Edit", edit_user_item_url(@user, @item)
