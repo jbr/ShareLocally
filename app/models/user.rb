@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   has_many :items
   
   accepts_nested_attributes_for :profile
-  attr_accessible :profile_attributes
+  attr_accessible :profile_attributes, :phone, :full_name, :address
   
   include Authentication
   include Authentication::ByPassword
