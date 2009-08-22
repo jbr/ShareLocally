@@ -17,3 +17,5 @@
         -unless flash[type].blank?
           %div{:id => type}= flash[type]
     #contents= yield
+    #footer
+      =link_to 'Official ShareLocally Rumble Blog', 'http://sharelocally.wordpress.com/'

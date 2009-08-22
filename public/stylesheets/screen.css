@@ -73,14 +73,10 @@ a, a:visited {
 body {
   padding: 10px 30px; }
 
-/* line 10, ../../app/stylesheets/_global.sass */
-#contents {
-  margin: 30px 0; }
-
-/* line 13, ../../app/stylesheets/_global.sass */
+/* line 11, ../../app/stylesheets/_global.sass */
 #flash {
   border-top: 5px solid black; }
-  /* line 15, ../../app/stylesheets/_global.sass */
+  /* line 13, ../../app/stylesheets/_global.sass */
   #flash div {
     border: 5px solid black;
     border-top: none;
@@ -114,3 +110,13 @@ body {
   #header #user_nav {
     margin: 25px;
     float: right; }
+
+/* line 1, ../../app/stylesheets/_contents.sass */
+#contents {
+  margin: 30px 0;
+  min-height: 500px; }
+
+/* line 1, ../../app/stylesheets/_footer.sass */
+#footer {
+  border-top: 5px solid black;
+  text-align: center; }
