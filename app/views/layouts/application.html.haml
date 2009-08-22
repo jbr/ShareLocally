@@ -5,5 +5,10 @@
     = stylesheet_link_tag 'screen.css', :media => 'screen, projection'
     = stylesheet_link_tag 'print.css', :media => 'print'
     = stylesheet_link_tag 'ie.css', :media => 'screen, projection'
+    %title ShareLocally
   %body
-    %h1 ShareLocally.org
+    #header
+      %h2#logo ShareLocally
+      =# render_partial => 'users/user_nav'
+      #user_nav
+        =link_to 'Log in'

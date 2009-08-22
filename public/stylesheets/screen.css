@@ -60,6 +60,35 @@ img a {
   border: none; }
 
 /* The *:focus rule is reset and suppresses link outlining.
- * You _must_ remember to redefine your own outline, as it’s an important accessibility aid. E.g.
- * *:focus
- * outline: #ccc dotted medium */
+ * You _must_ remember to redefine your own outline, as it’s an important accessibility aid. E.g. */
+/* line 12, ../../app/stylesheets/screen.sass */
+*:focus {
+  outline: #ccc dotted medium; }
+
+/* line 2, ../../app/stylesheets/global.sass */
+#header {
+  border-bottom: 5px solid black;
+  *display: inline-block;
+  margin: 10px 30px; }
+  /* line 3, ../../app/stylesheets/mixins.sass */
+  #header:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+  /* line 6, ../../app/stylesheets/global.sass */
+  #header #logo {
+    float: left;
+    text-indent: -1000px;
+    overflow: hidden;
+    background: red;
+    display: block;
+    width: 210px;
+    height: 50px;
+    background: url('/images/logo.png') no-repeat;
+    margin: 10px 30px; }
+  /* line 16, ../../app/stylesheets/global.sass */
+  #header #user_nav {
+    margin: 25px;
+    float: right; }

@@ -96,3 +96,234 @@ Processing TempsController#index (for 127.0.0.1 at 2009-08-21 18:56:57) [GET]
 Rendering template within layouts/application
 Rendering temps/index
 Completed in 7ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TempsController#index (for 127.0.0.1 at 2009-08-21 20:52:22) [GET]
+Rendering template within layouts/application
+Rendering temps/index
+Completed in 11ms (View: 9, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TempsController#index (for 127.0.0.1 at 2009-08-21 20:52:31) [GET]
+Rendering template within layouts/application
+Rendering temps/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TempsController#index (for 127.0.0.1 at 2009-08-21 20:54:03) [GET]
+Rendering template within layouts/application
+Rendering temps/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TempsController#index (for 127.0.0.1 at 2009-08-21 20:54:47) [GET]
+Rendering template within layouts/application
+Rendering temps/index
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TempsController#index (for 127.0.0.1 at 2009-08-21 20:55:15) [GET]
+Rendering template within layouts/application
+Rendering temps/index
+Completed in 7ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TempsController#index (for 127.0.0.1 at 2009-08-21 21:04:01) [GET]
+Rendering template within layouts/application
+Rendering temps/index
+Completed in 8ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TempsController#index (for 127.0.0.1 at 2009-08-21 21:04:13) [GET]
+Rendering template within layouts/application
+Rendering temps/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TempsController#index (for 127.0.0.1 at 2009-08-21 21:04:19) [GET]
+Rendering template within layouts/application
+Rendering temps/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TempsController#index (for 127.0.0.1 at 2009-08-21 21:04:30) [GET]
+Rendering template within layouts/application
+Rendering temps/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TempsController#index (for 127.0.0.1 at 2009-08-21 21:04:35) [GET]
+Rendering template within layouts/application
+Rendering temps/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TempsController#index (for 127.0.0.1 at 2009-08-21 21:05:10) [GET]
+Rendering template within layouts/application
+Rendering temps/index
+Completed in 5ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TempsController#index (for 127.0.0.1 at 2009-08-21 21:06:28) [GET]
+Rendering template within layouts/application
+Rendering temps/index
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TempsController#index (for 127.0.0.1 at 2009-08-21 21:06:40) [GET]
+Rendering template within layouts/application
+Rendering temps/index
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TempsController#index (for 127.0.0.1 at 2009-08-21 21:07:03) [GET]
+Rendering template within layouts/application
+Rendering temps/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TempsController#index (for 127.0.0.1 at 2009-08-21 21:07:04) [GET]
+Rendering template within layouts/application
+Rendering temps/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TempsController#index (for 127.0.0.1 at 2009-08-21 21:07:05) [GET]
+Rendering template within layouts/application
+Rendering temps/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TempsController#index (for 127.0.0.1 at 2009-08-21 21:07:12) [GET]
+Rendering template within layouts/application
+Rendering temps/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TempsController#index (for 127.0.0.1 at 2009-08-21 21:07:22) [GET]
+Rendering template within layouts/application
+Rendering temps/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TempsController#index (for 127.0.0.1 at 2009-08-21 21:07:35) [GET]
+Rendering template within layouts/application
+Rendering temps/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TempsController#index (for 127.0.0.1 at 2009-08-21 21:07:42) [GET]
+Rendering template within layouts/application
+Rendering temps/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TempsController#index (for 127.0.0.1 at 2009-08-21 21:07:51) [GET]
+Rendering template within layouts/application
+Rendering temps/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TempsController#index (for 127.0.0.1 at 2009-08-21 21:08:54) [GET]
+Rendering template within layouts/application
+Rendering temps/index
+Completed in 7ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TempsController#index (for 127.0.0.1 at 2009-08-21 21:09:30) [GET]
+Rendering template within layouts/application
+Rendering temps/index
+Completed in 7ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TempsController#index (for 127.0.0.1 at 2009-08-21 21:09:41) [GET]
+Rendering template within layouts/application
+Rendering temps/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TempsController#index (for 127.0.0.1 at 2009-08-21 21:10:00) [GET]
+Rendering template within layouts/application
+Rendering temps/index
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TempsController#index (for 127.0.0.1 at 2009-08-21 21:10:09) [GET]
+Rendering template within layouts/application
+Rendering temps/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TempsController#index (for 127.0.0.1 at 2009-08-21 21:10:15) [GET]
+Rendering template within layouts/application
+Rendering temps/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TempsController#index (for 127.0.0.1 at 2009-08-21 21:10:20) [GET]
+Rendering template within layouts/application
+Rendering temps/index
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TempsController#index (for 127.0.0.1 at 2009-08-21 21:10:59) [GET]
+Rendering template within layouts/application
+Rendering temps/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TempsController#index (for 127.0.0.1 at 2009-08-21 21:11:14) [GET]
+Rendering template within layouts/application
+Rendering temps/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TempsController#index (for 127.0.0.1 at 2009-08-21 21:11:22) [GET]
+Rendering template within layouts/application
+Rendering temps/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TempsController#index (for 127.0.0.1 at 2009-08-21 21:11:26) [GET]
+Rendering template within layouts/application
+Rendering temps/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TempsController#index (for 127.0.0.1 at 2009-08-21 21:11:41) [GET]
+Rendering template within layouts/application
+Rendering temps/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/]
