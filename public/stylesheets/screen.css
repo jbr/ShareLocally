@@ -149,5 +149,8 @@ body.users #form {
 /* line 9, ../../app/stylesheets/_users.sass */
 body.users #profile-fields {
   margin-top: 30px; }
+/* line 11, ../../app/stylesheets/_users.sass */
+body.users #user_address {
+  height: 50px; }
 
 @import url(_items.sas.css);
