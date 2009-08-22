@@ -9,12 +9,12 @@ test:
   adapter: mysql
   database: sharelocally_test
   username: root
-  password: sharel0cally
+  password: password
   host: localhost
 
 production:
   adapter: mysql
   database: sharelocally_production
   username: root
-  password: password
+  password: sharel0cally
   host: localhost
