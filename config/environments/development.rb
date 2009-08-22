@@ -13,8 +13,19 @@ config.action_controller.consider_all_requests_local = true
 config.action_view.debug_rjs                         = true
 config.action_controller.perform_caching             = false
 
-# Don't care if the mailer can't send
 config.action_mailer.raise_delivery_errors = true
+
+ActionMailer::Base.smtp_settings = {
+    :tls => true,
+    :address => "smtp.gmail.com",
+    :port => "587",
+    :domain => "sharelocally.org",
+    :authentication => :plain,
+    :user_name => "sharelocally@sharelocally.org",
+    :password => "sh4rel0cally" 
+  }
+  
+  
   class ActionMailer::Base
     def deliver_with_override!(mail = @mail)
       mail.subject = "Stormweight (Development): #{mail.to.to_sentence} #{mail.subject}"
