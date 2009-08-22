@@ -79,5 +79,6 @@ class User < ActiveRecord::Base
     geo=Geokit::Geocoders::MultiGeocoder.geocode (address)
     errors.add(:address, "Could not Geocode address") if !geo.success
     self.lat, self.lng = geo.lat,geo.lng if geo.success
+    self.address = geo.full_address
   end
 end
