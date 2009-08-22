@@ -15,7 +15,7 @@ class UserMailer < ActionMailer::Base
   
   def setup_email(user)
     @recipients  = "#{user.email}"
-    @from        = "sharelocally@sharelocally.org"
+    @from        = "sharelocally"
     @subject     = "[ShareLocally] "
     @sent_on     = Time.now
     @body[:user] = user
