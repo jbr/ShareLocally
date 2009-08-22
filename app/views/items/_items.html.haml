@@ -1,0 +1,9 @@
+#items
+  %h2 Your Items
+  - for item in current_user.items
+    = render_object_partial item
+  - if current_user.items.empty?
+    You have nothing shared
+    %p= link_to 'Share some stuff!', new_user_item_url(current_user)
+  - else
+    %p= link_to 'Share some more stuff!', new_user_item_url(current_user)

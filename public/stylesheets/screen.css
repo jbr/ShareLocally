@@ -76,12 +76,18 @@ body {
 /* line 11, ../../app/stylesheets/_global.sass */
 h1 {
   font-size: 25px;
-  line-height: 25px; }
+  line-height: 25px;
+  font-weight: bold; }
 
 /* line 15, ../../app/stylesheets/_global.sass */
+h2 {
+  font-size: 20px;
+  line-height: 20px; }
+
+/* line 19, ../../app/stylesheets/_global.sass */
 #flash {
   border-top: 5px solid black; }
-  /* line 17, ../../app/stylesheets/_global.sass */
+  /* line 21, ../../app/stylesheets/_global.sass */
   #flash div {
     border: 5px solid black;
     border-top: none;
@@ -135,4 +141,8 @@ body.users h1 {
   margin: 10px; }
 /* line 7, ../../app/stylesheets/_users.sass */
 body.users #form {
+  clear: both; }
+
+/* line 1, ../../app/stylesheets/_items.sass */
+#items {
   clear: both; }

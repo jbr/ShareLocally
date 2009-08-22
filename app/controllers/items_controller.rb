@@ -4,14 +4,14 @@ class ItemsController < ApplicationController
   before_filter :user_must_be_current
   
   def index
-    @items = Item.all
+    @items = @user.items
   end
   
   def show
   end
   
   def new
-    @item = Item.new
+    @item = @user.items.build
   end
   
   def edit
@@ -28,7 +28,7 @@ class ItemsController < ApplicationController
   end
   
   def create
-    @item = Item.new params[:item]
+    @item = @user.items.build params[:item]
     @success = @item.save
     respond_to do |format|
       format.html do
