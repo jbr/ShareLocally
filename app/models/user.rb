@@ -3,6 +3,7 @@ require 'digest/sha1'
 class User < ActiveRecord::Base
   generate_url_param_from :login
   acts_as_mappable
+  before_validation :geocode_address, :if => :address_changed?
   
   has_one :profile
   has_many :items
@@ -14,6 +15,8 @@ class User < ActiveRecord::Base
   include Authentication::ByPassword
   include Authentication::ByCookieToken
   include Authorization::AasmRoles
+  
+  validates_presence_of :address
 
   validates_presence_of     :login
   validates_length_of       :login,    :within => 3..40
@@ -68,5 +71,13 @@ class User < ActiveRecord::Base
     unless profile
       self.profile = Profile.new
     end
+  end
+  
+  private
+  
+  def geocode_address
+    geo=Geokit::Geocoders::MultiGeocoder.geocode (address)
+    errors.add(:address, "Could not Geocode address") if !geo.success
+    self.lat, self.lng = geo.lat,geo.lng if geo.success
   end
 end
