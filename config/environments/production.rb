@@ -29,7 +29,7 @@ config.cache_store = :mem_cache_store
 ActionMailer::Base.delivery_method = :sendmail
 ActionMailer::Base.sendmail_settings = {
   :location       => '/usr/sbin/sendmail',
-  :arguments      => '-i -t -f robot@stormweight.com'
+  :arguments      => '-i -t -f sharelocally@sharelocally.org'
 }
 
 ActionMailer::Base.smtp_settings = {
