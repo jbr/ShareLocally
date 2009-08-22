@@ -1,21 +1,22 @@
 /*
 Sass::SyntaxError: Undefined mixin 'clearfix'.
-on line 4 of /Users/jbr/code/sharelocally/app/stylesheets/global.sass
+on line 6 of /Users/jbr/code/sharelocally/app/stylesheets/global.sass
 
-1: 
-2: #header
-3:   :border-bottom 5px solid black
-4:   +clearfix
-5:   :margin 10px 30px
-6:   #logo
-7:     :float left
-8:     :text-indent -1000px
-9:     :overflow hidden
-10:     :background red
+2:   :color blue
+3: 
+4: #header
+5:   :border-bottom 5px solid black
+6:   +clearfix
+7:   :margin 10px 30px
+8:   #logo
+9:     :float left
+10:     :text-indent -1000px
+11:     :overflow hidden
+12:     :background red
 
 
 Backtrace:
-/Users/jbr/code/sharelocally/app/stylesheets/global.sass:4
+/Users/jbr/code/sharelocally/app/stylesheets/global.sass:6
 /Library/Ruby/Gems/1.8/gems/haml-2.2.0/lib/sass/tree/mixin_node.rb:27:in `_perform'
 /Library/Ruby/Gems/1.8/gems/haml-2.2.0/lib/sass/tree/node.rb:156:in `perform'
 /Library/Ruby/Gems/1.8/gems/haml-2.2.0/lib/sass/tree/node.rb:200:in `perform_children'
@@ -90,4 +91,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Sass::SyntaxError: Undefined mixin 'clearfix'.\A on line 4 of /Users/jbr/code/sharelocally/app/stylesheets/global.sass\A \A 1: \A 2: #header\A 3:   :border-bottom 5px solid black\A 4:   +clearfix\A 5:   :margin 10px 30px\A 6:   #logo\A 7:     :float left\A 8:     :text-indent -1000px\A 9:     :overflow hidden\A 10:     :background red\A "; }
+  content: "Sass::SyntaxError: Undefined mixin 'clearfix'.\A on line 6 of /Users/jbr/code/sharelocally/app/stylesheets/global.sass\A \A 2:   :color blue\A 3: \A 4: #header\A 5:   :border-bottom 5px solid black\A 6:   +clearfix\A 7:   :margin 10px 30px\A 8:   #logo\A 9:     :float left\A 10:     :text-indent -1000px\A 11:     :overflow hidden\A 12:     :background red\A "; }

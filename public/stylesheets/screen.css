@@ -61,23 +61,45 @@ img a {
 
 /* The *:focus rule is reset and suppresses link outlining.
  * You _must_ remember to redefine your own outline, as it’s an important accessibility aid. E.g. */
-/* line 12, ../../app/stylesheets/screen.sass */
+/* line 1, ../../app/stylesheets/_global.sass */
+a, a:visited {
+  color: blue; }
+
+/* line 4, ../../app/stylesheets/_global.sass */
 *:focus {
   outline: #ccc dotted medium; }
 
-/* line 2, ../../app/stylesheets/global.sass */
+/* line 7, ../../app/stylesheets/_global.sass */
+body {
+  padding: 10px 30px; }
+
+/* line 10, ../../app/stylesheets/_global.sass */
+#contents {
+  margin: 30px 0; }
+
+/* line 13, ../../app/stylesheets/_global.sass */
+#flash {
+  border-top: 5px solid black; }
+  /* line 15, ../../app/stylesheets/_global.sass */
+  #flash div {
+    border: 5px solid black;
+    border-top: none;
+    height: 50px;
+    font-size: 25px;
+    line-height: 50px;
+    text-align: center; }
+
+/* line 2, ../../app/stylesheets/_header.sass */
 #header {
-  border-bottom: 5px solid black;
-  *display: inline-block;
-  margin: 10px 30px; }
-  /* line 3, ../../app/stylesheets/mixins.sass */
+  *display: inline-block; }
+  /* line 3, ../../app/stylesheets/_mixins.sass */
   #header:after {
     content: " ";
     display: block;
     height: 0;
     clear: both;
     visibility: hidden; }
-  /* line 6, ../../app/stylesheets/global.sass */
+  /* line 4, ../../app/stylesheets/_header.sass */
   #header #logo {
     float: left;
     text-indent: -1000px;
@@ -88,7 +110,7 @@ img a {
     height: 50px;
     background: url('/images/logo.png') no-repeat;
     margin: 10px 30px; }
-  /* line 16, ../../app/stylesheets/global.sass */
+  /* line 14, ../../app/stylesheets/_header.sass */
   #header #user_nav {
     margin: 25px;
     float: right; }
