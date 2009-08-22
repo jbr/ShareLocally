@@ -9,7 +9,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090822173907) do
+ActiveRecord::Schema.define(:version => 20090822191420) do
+
+  create_table "items", :force => true do |t|
+    t.string   "title"
+    t.string   "description"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "profiles", :force => true do |t|
+    t.integer  "user_id"
+    t.text     "about"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "login",                     :limit => 40

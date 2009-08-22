@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   load_resource :user, :by => :id, :only => [:suspend, :unsuspend, :destroy, :purge, :show]
-  before_filter :user_must_be_current, :only => [:edit, :show]
+  before_filter :user_must_be_current, :only => [:edit, :show, :update]
   # before_filter :user_must_have_access, :only => :show
   
   def index
@@ -48,6 +48,17 @@ class UsersController < ApplicationController
       redirect_back_or_default('/')
     end
   end
+  
+  def update
+    @success = @user.update_attributes params[:user]
+    respond_to do |format|
+      format.html do
+        @success ? redirect_to(user_url(@user)) : render(:action => :edit)
+      end
+      format.js
+    end
+  end
+    
 
   def suspend
     @user.suspend! 

@@ -7,6 +7,9 @@ class User < ActiveRecord::Base
   has_one :profile
   has_many :items
   
+  accepts_nested_attributes_for :profile
+  attr_accessible :profile_attributes
+  
   include Authentication
   include Authentication::ByPassword
   include Authentication::ByCookieToken
