@@ -1,0 +1,3 @@
+-remote_form_for item, :url => user_items_url(@user), :method => :post, :html => {:class => 'remote-item-form'} do |f|
+  =render :partial => 'items/form', :locals => {:f => f}
+  =f.submit 'Create'

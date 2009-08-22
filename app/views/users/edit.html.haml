@@ -1,0 +1,6 @@
+= gravatar_for @user
+%h1== Editing profile for #{@user}
+#form
+  - form_for @user do |f|
+    = render :partial => 'users/form', :locals => {:f => f}
+

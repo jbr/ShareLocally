@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   load_resource :user, :by => :id, :only => [:suspend, :unsuspend, :destroy, :purge, :show]
-  before_filter :user_must_be_current, :only => :edit
+  before_filter :user_must_be_current, :only => [:edit, :show]
   # before_filter :user_must_have_access, :only => :show
   
   def index

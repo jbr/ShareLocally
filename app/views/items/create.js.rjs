@@ -1,0 +1,7 @@
+if @success
+  page <<<<-END_JS
+    $(#{render_object_partial @item, :to => :json})
+      .appendTo('#items')
+      .show('blind');
+  END_JS
+end

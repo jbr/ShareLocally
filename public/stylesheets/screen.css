@@ -74,9 +74,14 @@ body {
   padding: 10px 30px; }
 
 /* line 11, ../../app/stylesheets/_global.sass */
+h1 {
+  font-size: 25px;
+  line-height: 25px; }
+
+/* line 15, ../../app/stylesheets/_global.sass */
 #flash {
   border-top: 5px solid black; }
-  /* line 13, ../../app/stylesheets/_global.sass */
+  /* line 17, ../../app/stylesheets/_global.sass */
   #flash div {
     border: 5px solid black;
     border-top: none;
@@ -120,3 +125,15 @@ body {
 #footer {
   border-top: 5px solid black;
   text-align: center; }
+
+/* line 2, ../../app/stylesheets/_users.sass */
+body.users #gravatar {
+  float: left;
+  margin: 5px; }
+/* line 5, ../../app/stylesheets/_users.sass */
+body.users h1 {
+  float: left;
+  margin: 10px; }
+/* line 8, ../../app/stylesheets/_users.sass */
+body.users #form {
+  clear: both; }

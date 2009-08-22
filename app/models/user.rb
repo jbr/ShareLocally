@@ -4,6 +4,9 @@ class User < ActiveRecord::Base
   
   generate_url_param_from :login
   
+  has_one :profile
+  has_many :items
+  
   include Authentication
   include Authentication::ByPassword
   include Authentication::ByCookieToken

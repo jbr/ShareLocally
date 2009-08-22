@@ -1,0 +1,3 @@
+= render :partial => 'items/item', :locals => {:item => @item}
+= link_to "All Items", user_items_url(@user)
+= link_to "Edit", edit_user_item_url(@user, @item)

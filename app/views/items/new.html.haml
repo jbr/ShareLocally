@@ -1,0 +1,3 @@
+- form_for @item, :url => user_items_url(@user) do |f|
+  = render :partial => 'items/form', :locals => {:f => f}
+  = f.submit 'Create'

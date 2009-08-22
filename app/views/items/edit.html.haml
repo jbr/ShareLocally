@@ -1,0 +1,4 @@
+- form_for @item, :url => user_item_url(@user) do |f|
+  = render :partial => 'items/form', :locals => {:f => f}
+  = f.submit 'Save Changes'
+= link_to "&times; Delete", item_url(@item), :method => :delete

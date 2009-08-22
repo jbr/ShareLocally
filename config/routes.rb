@@ -8,7 +8,11 @@ ActionController::Routing::Routes.draw do |map|
   map.brochure '/pages/*page', :controller => "brochure"
   map.resources :forgotten_passwords
   
-  map.resources :users, :member => { :suspend => :put, :unsuspend => :put, :purge => :delete }
+  map.resources :users, :member => { :suspend => :put, :unsuspend => :put, :purge => :delete } do |user|
+    user.resources :items
+  end
+    
+  map.resources :items
 
   map.resource :session
 

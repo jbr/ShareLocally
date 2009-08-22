@@ -6,4 +6,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
   include AuthenticatedSystem
   filter_parameter_logging :password
+  
+  def redirect_to_root
+    redirect_to '/'
+  end
 end
