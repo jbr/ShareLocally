@@ -15,7 +15,10 @@ class User < ActiveRecord::Base
   include Authentication::ByPassword
   include Authentication::ByCookieToken
   include Authorization::AasmRoles
-  
+
+  before_validation :clean_up_phone
+  validates_format_of :phone, :with => /\([0-9]{3}\) [0-9]{3}-[0-9]{4}/, :allow_blank => true
+    
   validates_presence_of :address
 
   validates_presence_of     :login
@@ -75,9 +78,16 @@ class User < ActiveRecord::Base
   
   private
   
+  def clean_up_phone
+    unless phone.blank?
+      phone.gsub! /[^0-9]/, ''
+      phone.replace "(#{phone.slice(0..2)}) #{phone.slice(3..5)}-#{phone.slice(6..9)}"
+    end
+  end
+  
   def geocode_address
-    geo=Geokit::Geocoders::MultiGeocoder.geocode (address)
-    errors.add(:address, "Could not Geocode address") if !geo.success
+    geo = Geokit::Geocoders::MultiGeocoder.geocode address
+    errors.add(:address, "Could not Geocode address") unless geo.success
     self.lat, self.lng = geo.lat,geo.lng if geo.success
     self.address = geo.full_address
   end
