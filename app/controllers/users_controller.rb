@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   load_resource :user, :by => :id, :only => [:suspend, :unsuspend, :destroy, :purge, :show]
+  before_filter :access_denied, :only => [:new, :activate, :create], :if => :logged_in?
   before_filter :user_must_be_current, :only => [:edit, :show, :update]
   # before_filter :user_must_have_access, :only => :show
   

@@ -78,20 +78,53 @@ textarea {
   vertical-align: middle; }
 
 /* line 15, ../../app/stylesheets/_global.sass */
+#errorExplanation, .errorExplanation {
+  color: red;
+  *display: inline-block;
+  margin: 30px; }
+  /* line 3, ../../app/stylesheets/_mixins.sass */
+  #errorExplanation:after, .errorExplanation:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+  /* line 19, ../../app/stylesheets/_global.sass */
+  #errorExplanation p, .errorExplanation p {
+    display: none; }
+  /* line 21, ../../app/stylesheets/_global.sass */
+  #errorExplanation ul, .errorExplanation ul {
+    color: black;
+    font-size: 110%;
+    float: left;
+    display: block;
+    background: #ffcccc;
+    border: 1px solid red;
+    padding: 10px; }
+
+/* line 30, ../../app/stylesheets/_global.sass */
+.fieldWithErrors {
+  background: #ffcccc;
+  padding: 10px; }
+  /* line 33, ../../app/stylesheets/_global.sass */
+  .fieldWithErrors input, .fieldWithErrors textarea {
+    border: 1px solid red; }
+
+/* line 36, ../../app/stylesheets/_global.sass */
 h1 {
   font-size: 25px;
   line-height: 25px;
   font-weight: bold; }
 
-/* line 19, ../../app/stylesheets/_global.sass */
+/* line 40, ../../app/stylesheets/_global.sass */
 h2 {
   font-size: 20px;
   line-height: 20px; }
 
-/* line 23, ../../app/stylesheets/_global.sass */
+/* line 44, ../../app/stylesheets/_global.sass */
 #flash {
   border-top: 5px solid black; }
-  /* line 25, ../../app/stylesheets/_global.sass */
+  /* line 46, ../../app/stylesheets/_global.sass */
   #flash div {
     border: 5px solid black;
     border-top: none;
@@ -153,4 +186,7 @@ body.users #profile-fields {
 body.users #user_address {
   height: 50px; }
 
-@import url(_items.sas.css);
+/* line 1, ../../app/stylesheets/_items.sass */
+#items {
+  clear: both;
+  display: block; }

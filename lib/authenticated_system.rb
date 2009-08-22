@@ -14,7 +14,7 @@ module AuthenticatedSystem
     def authorized?(action = action_name, resource = nil) logged_in? end
 
     def login_required() authorized? || access_denied end
-      
+    
     def user_must_be_current
       (logged_in? && @user == current_user) || access_denied
     end

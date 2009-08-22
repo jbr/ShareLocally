@@ -1,10 +1,16 @@
 class ItemsController < ApplicationController
-  load_resource :user, :if_nil => :access_denied
+  before_filter :login_required
+  load_resource :user, :if_nil => :access_denied, :except => :index
+  load_resource :user, :only => :index
   load_resource :item, :by => :id
-  before_filter :user_must_be_current
+  before_filter :user_must_be_current, :unless => :user_is_nil
   
   def index
-    @items = @user.items
+    if @user
+      @items = @user.items
+    else
+      @items = User.find :all, :order => 'distance desc', :limit => 30
+    end
   end
   
   def show
