@@ -6,7 +6,12 @@ class User < ActiveRecord::Base
   before_validation :geocode_address, :if => :address_changed?
   
   has_one :profile
+  
   has_many :items
+  has_many :incoming_requests, :through => :items, :source => :requests
+  
+  has_many :outgoing_requests, :class_name => 'Request'
+  has_many :requested_items, :through => :outgoing_requests, :source => :item
   
   accepts_nested_attributes_for :profile
   attr_accessible :profile_attributes, :phone, :full_name, :address

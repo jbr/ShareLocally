@@ -10,12 +10,13 @@
     %link{:rel => "shortcut icon", :href => "/favicon.jpg"}
   %body{:class => "#{params[:controller]} #{params[:action]}"}
     #header
-      =link_to 'ShareLocally', '/', :id => 'logo'
+      = link_to 'ShareLocally', '/', :id => 'logo'
       = render :partial => 'users/user_nav'
     #flash
-      -[:error, :notice].each do |type|
-        -unless flash[type].blank?
+      - [:error, :notice].each do |type|
+        - unless flash[type].blank?
           %div{:id => type}= flash[type]
     #contents= yield
     #footer
-      =link_to 'Official ShareLocally Rumble Blog', 'http://sharelocally.wordpress.com/'
+      %p= link_to 'Official ShareLocally Rumble Blog', 'http://sharelocally.wordpress.com/'
+      %p== Follow ShareLocally on twitter #{link_to "here", 'http://twitter.com/sharelocally'}

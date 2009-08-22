@@ -1,3 +1,5 @@
 .item{:id => item.element_id}
   %h2.title= item.title
   %p.description= item.description
+  - unless current_user == item.user
+    %p.distance== This item is #{distance_phrase_for item} from you.

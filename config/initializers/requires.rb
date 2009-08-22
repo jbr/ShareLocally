@@ -1,2 +1,2 @@
-require 'aasm'
 require 'md5'
+require 'aasm'

@@ -4,14 +4,10 @@ class ItemsController < ApplicationController
   load_resource :user, :only => :index
   load_resource :item, :by => :id
   before_filter :user_must_be_current, :unless => proc{|c| c.instance_eval{@user.nil?}}
+
   
   def index
-    if @user
-      @items = @user.items
-    else
-      @items = User.find(:all, :origin => [current_user.lat, current_user.lng],
-        :order => 'distance desc', :limit => 30, :include => :items).map(&:items).flatten
-    end
+    @items = (@user.try(:items) || Item).find :all, :origin => current_user, :order => "distance asc", :limit => 30
   end
   
   def show

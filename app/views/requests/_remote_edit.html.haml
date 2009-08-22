@@ -1,0 +1,3 @@
+-remote_form_for Requests.new, :url => request_url(request), :method => :put, :html => {:class => 'remote-request-form'} do |f|
+  =render :partial => 'requests/form', :locals => {:f => f}
+  =f.submit 'Update'
