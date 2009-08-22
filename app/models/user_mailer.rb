@@ -11,6 +11,12 @@ class UserMailer < ActionMailer::Base
     @body[:url]  = base_url
   end
   
+  def forgotten_password(user)
+    setup_email(user)
+    @subject += "Forgot something?"
+    @body[:url] = "#{base_url}/forgotten_passwords/#{user.activation_code}"
+  end
+  
   protected
   
   def setup_email(user)
@@ -20,7 +26,7 @@ class UserMailer < ActionMailer::Base
     sent_on Time.now
     body[:user] = user
   end
-    
+
   def base_url
     case RAILS_ENV
     when 'development'

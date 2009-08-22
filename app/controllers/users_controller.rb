@@ -1,5 +1,18 @@
 class UsersController < ApplicationController
-  before_filter :find_user, :only => [:suspend, :unsuspend, :destroy, :purge]
+  load_resource :user, :by => :id, :only => [:suspend, :unsuspend, :destroy, :purge, :show]
+  before_filter :user_must_be_current, :only => :edit
+  # before_filter :user_must_have_access, :only => :show
+  
+  def index
+    if logged_in?
+      redirect_to user_url(current_user)
+    else
+      redirect_to brochure_url(:page => 'about')
+    end
+  end
+  
+  def edit
+  end
   
   def new
     @user = User.new
@@ -54,14 +67,5 @@ class UsersController < ApplicationController
   def purge
     @user.destroy
     redirect_to users_path
-  end
-  
-  # There's no page here to update or destroy a user.  If you add those, be
-  # smart -- make sure you check that the visitor is authorized to do so, that they
-  # supply their old password along with a new one to update it, etc.
-
-protected
-  def find_user
-    @user = User.find(params[:id])
   end
 end
