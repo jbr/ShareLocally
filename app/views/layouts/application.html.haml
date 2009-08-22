@@ -10,7 +10,7 @@
     %link{:rel => "shortcut icon", :href => "/favicon.jpg"}
   %body{:class => "#{params[:controller]} #{params[:action]}"}
     #header
-      %h2#logo ShareLocally
+      =link_to 'ShareLocally', '/', :id => 'logo'
       = render :partial => 'users/user_nav'
     #flash
       -[:error, :notice].each do |type|
