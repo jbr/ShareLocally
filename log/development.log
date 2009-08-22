@@ -1,0 +1,98 @@
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-21 18:48:55) [GET]
+
+ActionController::RoutingError (No route matches "/posts.rss" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-21 18:48:55) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TempController#index (for 127.0.0.1 at 2009-08-21 18:55:11) [GET]
+
+ActionController::UnknownAction (No action responded to index. Actions: ):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TempController#index (for 127.0.0.1 at 2009-08-21 18:55:31) [GET]
+
+ActionController::UnknownAction (No action responded to index. Actions: ):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TempController#index (for 127.0.0.1 at 2009-08-21 18:55:32) [GET]
+
+ActionController::UnknownAction (No action responded to index. Actions: ):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-21 18:55:40) [GET]
+
+LoadError (Expected /Users/jbr/code/sharelocally/app/controllers/temp_controller.rb to define TempController):
+  
+
+Rendered rescues/_trace (25.3ms)
+Rendered rescues/_request_and_response (1.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-21 18:55:47) [GET]
+
+NameError (uninitialized constant TempController):
+  
+
+Rendered rescues/_trace (26.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TempsController#index (for 127.0.0.1 at 2009-08-21 18:55:53) [GET]
+
+ActionController::UnknownAction (No action responded to index. Actions: ):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TempsController#index (for 127.0.0.1 at 2009-08-21 18:55:57) [GET]
+
+ActionController::UnknownAction (No action responded to index. Actions: ):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TempsController#index (for 127.0.0.1 at 2009-08-21 18:56:04) [GET]
+
+ActionView::MissingTemplate (Missing template temps/index.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TempsController#index (for 127.0.0.1 at 2009-08-21 18:56:36) [GET]
+Rendering template within layouts/application
+Rendering temps/index
+Completed in 11ms (View: 10, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TempsController#index (for 127.0.0.1 at 2009-08-21 18:56:57) [GET]
+Rendering template within layouts/application
+Rendering temps/index
+Completed in 7ms (View: 6, DB: 0) | 200 OK [http://localhost/]
