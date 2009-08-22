@@ -14,7 +14,7 @@ class BrochureController < ApplicationController
     params[:action] = params[:page]
     render :template => path and return if logged_in? || RAILS_ENV == 'development'
     
-    page = Rails.cache.fetch [path, perspective.to_param].join("/") do
+    page = Rails.cache.fetch path do
       render_to_string :template => path
     end
     
