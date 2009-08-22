@@ -31,10 +31,3 @@ ActionMailer::Base.sendmail_settings = {
   :location       => '/usr/sbin/sendmail',
   :arguments      => '-i -t -f sharelocally@sharelocally.org'
 }
-
-ActionMailer::Base.smtp_settings = {
-  :domain => 'sharelocally.org',
-  :user_name => 'sharelocally@sharelocally.org',
-  :password => 'sharel0cally',
-  :authentication => 'login'
-}
