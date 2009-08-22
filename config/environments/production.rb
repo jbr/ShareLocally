@@ -26,12 +26,3 @@ config.cache_store = :mem_cache_store
 
 # Enable threaded mode
 # config.threadsafe!
-
-ActionMailer::Base.smtp_settings = {
-  :address => "smtp.sharelocally.org",
-  :port => 25,
-  :domain => "sharelocally.org",
-  :authentication => :plain,
-  :user_name => "sharelocally@sharelocally.org",
-  :password => "sharel0cally"
-}
