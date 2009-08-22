@@ -1,6 +1,12 @@
 = gravatar_for @user
 %h1== Editing profile for #{@user}
+= render :partial => 'users/why_profile_important'
+== Want to change your photo? #{link_to 'Get a gravatar', 'http://en.gravatar.com/site/signup'}
 #form
   - form_for @user do |f|
     = render :partial => 'users/form', :locals => {:f => f}
-
+    %p
+      - f.fields_for :profile do |profile|
+        = profile.label :about
+        = profile.text_area :about
+    = f.submit 'Save'

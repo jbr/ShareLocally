@@ -14,11 +14,3 @@
 %p
   = f.label :password_confirmation
   = f.password_field :password_confirmation
-  
-%p
-  - f.fields_for :profile do |profile|
-    = profile.label :about
-    = profile.text_area :about
-
-
-= submit_tag 'Sign up'

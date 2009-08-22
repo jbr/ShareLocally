@@ -1,7 +1,6 @@
 require 'digest/sha1'
 
 class User < ActiveRecord::Base
-  
   generate_url_param_from :login
   
   has_one :profile
@@ -27,6 +26,8 @@ class User < ActiveRecord::Base
   validates_length_of       :email,    :within => 6..100 #r@a.wk
   validates_uniqueness_of   :email
   validates_format_of       :email,    :with => Authentication.email_regex, :message => Authentication.bad_email_message
+  
+  before_create :build_profile
 
   # HACK HACK HACK -- how to do attr_accessible from here?
   # prevents a user from submitting a crafted form that bypasses activation
@@ -57,10 +58,14 @@ class User < ActiveRecord::Base
 
   protected
     
-    def make_activation_code
-        self.deleted_at = nil
-        self.activation_code = self.class.make_token
+  def make_activation_code
+    self.deleted_at = nil
+    self.activation_code = self.class.make_token
+  end
+
+  def build_profile
+    unless profile
+      self.profile = Profile.new
     end
-
-
+  end
 end

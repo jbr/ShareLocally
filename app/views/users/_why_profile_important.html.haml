@@ -1,0 +1,13 @@
+#profile-importance
+  
+  =link_to 'Why is your profile important?', '#'
+  :javascript
+    $(function(){
+      $('#profile-importance a:first').click(function(){
+        $(this).remove();
+        $('#profile-importance div:not(:visible)').show();
+        return false;
+      })
+    })
+  %div{:style => 'display:none'}
+    Your profile is how people decide if they're going to accept your requests.
