@@ -13,7 +13,7 @@ body
 input[type=submit].save-button
   :border none
   :text-indent -1000px
-  :width 105px
+  :width 57px
   :height 35px
   :background url("/images/save-button.png") no-repeat
   &:hover
@@ -66,6 +66,19 @@ a.deny-button
   &:active
     :background-position 0 -60px
     
+input[type=submit].delete-button
+  :display block
+  :overflow hidden
+  :border none
+  :text-indent -1000px
+  :width 55px
+  :height 35px
+  :background url("/images/delete-button.png") no-repeat
+  &:hover
+    :background-position 0 -35px
+  &:active
+    :background-position 0 -70px
+    
 a.request-button
   :display block
   :overflow hidden
@@ -88,16 +101,19 @@ a.request-button
     :margin 20px
     :position relative
     a.close
+      :background url("/images/close.png") no-repeat
       :width 20px
       :height 20px
+      :text-indent -100px
+      :overflow hidden
       :position absolute
       :display block
-      :float right
       :top -10px
       :right -10px
-      :border= "1px solid" !border_color
-      :text-align center
-      :background #CCC
+      &:hover
+        :background-position 0 -20px
+      &:active
+        :background-position 0 -40px
       
   a.replacement
     :font-size 11px

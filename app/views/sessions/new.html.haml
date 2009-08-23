@@ -1,15 +1,15 @@
-#log-in
+#log-in.box.bordered
   - form_tag session_path do
-    %p
+    %div
       = label_tag 'Username'
       = text_field_tag 'login', @login, :tabindex => 1
 
-    %p
+    %div
       = label_tag "Password"
       = password_field_tag 'password', nil, :tabindex => 2
 
-    %p
+    %div
       = label_tag 'remember_me', 'Remember me'
       = check_box_tag 'remember_me', '1', @remember_me, :tabindex => 3
 
-    %p= submit_tag 'Log in', :tabindex => 4
+    %div.submit= submit_tag 'Log in', :tabindex => 4, :id => 'log-in-button'

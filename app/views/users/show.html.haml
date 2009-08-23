@@ -1,4 +1,4 @@
--walking = current_user.distance_from(@user) < 1.0
+-walking = current_user.distance_from(@user) <= 1.0
 
 -content_for :head do
   =javascript_include_tag "http://maps.google.com/maps?file=api&amp;v=2&amp;key=#{Geokit::Geocoders::google}&sensor=true"

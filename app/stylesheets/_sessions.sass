@@ -1,5 +1,12 @@
 body.sessions
   #log-in
+    form
+      :margin-top 30px
+    div
+      :margin 10px
+        :left 125px
+      &.submit
+        :margin 20px auto 30px
     p
       +clearfix
       input, label
@@ -7,9 +14,10 @@ body.sessions
       label 
         :width 150px
     #log-in-button
+      :margin auto
       :border none
       :text-indent -1000px
-      :width 98px
+      :width 52px
       :height 35px
       :background url("/images/log-in-button.png") no-repeat
       &:hover

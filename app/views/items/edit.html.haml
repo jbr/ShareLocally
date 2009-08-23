@@ -2,4 +2,4 @@
   - form_for @item, :url => user_item_url(@user) do |f|
     = render :partial => 'items/form', :locals => {:f => f}
     = f.submit 'Save', :class => 'save-button'
-  = button_to "Delete this item", item_url(@item), :method => :delete, :confirm => "Really?"
+  = button_to "Delete this item", item_url(@item), :method => :delete, :confirm => "Really?", :class => 'delete-button image-button'
