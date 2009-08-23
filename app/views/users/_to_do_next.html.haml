@@ -1,0 +1,12 @@
+- if empty_profile? || not_enough_items? || no_outgoing_requests?
+  .box.bordered#to-do-next
+    %h2 To do next
+    %ol
+      %li
+        = check_for empty_profile?, "Fill out your profile", edit_user_url(current_user)
+      %li
+        = check_for not_enough_items?, "Share some items", new_user_item_url(current_user)
+        == (#{current_user.items.count}/3)
+      %li
+        = check_for no_outgoing_requests?, "Request nearby stuff", items_url
+        

@@ -22,4 +22,25 @@ module UsersHelper
       yield action, resource
     end
   end
+  
+  
+  def empty_profile?
+    %w(full_name phone about).all? {|column| current_user.send(column.to_s).blank?}
+  end
+  
+  def not_enough_items?
+    current_user.items.count < 3
+  end
+  
+  def no_outgoing_requests?
+    current_user.outgoing_requests.empty?
+  end
+  
+  def check_for(boolean, text, url)
+    if boolean
+      "[&nbsp;&nbsp;] #{link_to text, url}"
+    else
+      "[x] #{content_tag 'strike', text}"
+    end
+  end
 end

@@ -1,7 +1,11 @@
 %p
-  =f.label :title, "What is it?"
-  =f.text_field :title
+  = f.label :title, "What is it?"
+  = f.text_field :title
   
 %p
-  =f.label :description, "Tell us about it (think about what your neighbors might search for)"
-  =f.text_area :description
+  = f.label :description, "Tell us about it (think about what your neighbors might search for)"
+  = f.text_area :description
+
+%p
+  = f.label :available, "Is it available to borrow?"
+  = f.check_box :available
