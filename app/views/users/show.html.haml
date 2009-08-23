@@ -1,4 +1,7 @@
 = gravatar_for @user, :id => 'big-gravatar'
-%h1
-  = @user
-%p#about= @user.profile.try :about
+%h1= @user
+%dl
+  -%w(address phone full_name).each do |column|
+    %dt{:class => column}= column.humanize
+    %dd{:class => column}= @user.send(column.to_sym).or_if_blank content_tag('em', "#{@user} did not provide their #{column.humanize.downcase}")
+%p#about= @user.profile.try(:about).or_if_blank "#{content_tag 'strong', @user} did not provide an any additional information"

@@ -51,7 +51,13 @@ class User < ActiveRecord::Base
     Item.find :all, options
   end
 
-  def to_s() login end
+  def to_s
+    if full_name.blank?
+      login
+    else
+      "#{full_name} (#{login})"
+    end
+  end
 
   # Authenticates a user by their login name and unencrypted password.  Returns the user or nil.
   #
