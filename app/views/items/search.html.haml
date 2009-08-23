@@ -3,9 +3,8 @@
     %h2== Nothing found for #{params[:search]}.
     == Can we convince you to #{link_to "add something", new_user_item_url(current_user)} so the next person doesn't get this message?
   = render :partial => 'items/search_form'
-  #advanced-search
-    = link_to 'Advanced Search', '#', :class => 'replacement'
-    %div{:style => 'display:none'} Hey geeks; you can use regular expressions to search!
+  - replacement_link "Advanced Search", :id => 'advanced-search' do
+    == Hey geeks; you can use #{link_to 'regular expressions', 'http://xkcd.com/208/', :target => '_blank'} to search!
 - unless params[:search].blank? || @items.blank?
   #search-items.items.box.bordered
 

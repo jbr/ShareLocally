@@ -1,5 +1,5 @@
 = render_object_partial @item
-- if @item.user == current_user
+- if @item.user == current_user && !@item.requests.empty?
   .item-requests
     %h2 Users that want to borrow this item
     - for request in @item.requests
