@@ -4,6 +4,8 @@ a, a:visited
 *:focus
   :outline= !border_color "solid medium"
 
+html, body, p, a, div, input, span, textarea
+  :font-family sans-serif
 body
   :padding 10px 30px
 
@@ -25,9 +27,14 @@ b, strong
 textarea, input[type=text], input[type=password]
   :border= "1px solid" !border_color
   :background= !input_background
+  :font-size 15px
   &:hover, &:focus
     :border-color= !border_color - #222
     :background= !input_background + #020202
+    
+    
+.bordered
+  :border= "1px solid" !border_color
 
   
 #errorExplanation, .errorExplanation
@@ -53,7 +60,7 @@ textarea, input[type=text], input[type=password]
 
 h1
   :font-size 25px
-  :line-height 25px
+  :line-height 30px
   :font-weight bold
 h2
   :font-size 20px

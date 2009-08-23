@@ -1,11 +1,4 @@
-div.items
-  :clear left
-  :display block
-  :margin 20px 0
-  :width 400px
-  :float left
-  :padding 10px
-  :border= "1px solid" !border_color
+div.box
   & > h2
     :margin-bottom 10px
   & > p > a
@@ -15,3 +8,7 @@ div.items
     :padding 10px
     :border-bottom= "1px dashed" !border_color
     :background-color= !item_color
+    
+#item_description
+  :display block
+  :margin-top 10px

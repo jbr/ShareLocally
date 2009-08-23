@@ -68,38 +68,47 @@ a, a:visited {
   outline: #cccccc solid medium; }
 
 /* line 7, ../../app/stylesheets/_global.sass */
+html, body, p, a, div, input, span, textarea {
+  font-family: sans-serif; }
+
+/* line 9, ../../app/stylesheets/_global.sass */
 body {
   padding: 10px 30px; }
 
-/* line 10, ../../app/stylesheets/_global.sass */
+/* line 12, ../../app/stylesheets/_global.sass */
 textarea {
   width: 300px;
   height: 100px;
   vertical-align: middle; }
 
-/* line 15, ../../app/stylesheets/_global.sass */
+/* line 17, ../../app/stylesheets/_global.sass */
 a.replacement {
   font-size: 11px;
   line-height: 11px; }
 
-/* line 19, ../../app/stylesheets/_global.sass */
+/* line 21, ../../app/stylesheets/_global.sass */
 em, i {
   font-style: italic; }
 
-/* line 22, ../../app/stylesheets/_global.sass */
+/* line 24, ../../app/stylesheets/_global.sass */
 b, strong {
   font-weight: bold; }
 
-/* line 25, ../../app/stylesheets/_global.sass */
+/* line 27, ../../app/stylesheets/_global.sass */
 textarea, input[type=text], input[type=password] {
   border: 1px solid #cccccc;
-  background: #f9f9f9; }
-  /* line 28, ../../app/stylesheets/_global.sass */
+  background: #f9f9f9;
+  font-size: 15px; }
+  /* line 31, ../../app/stylesheets/_global.sass */
   textarea:hover, textarea:focus, input[type=text]:hover, input[type=text]:focus, input[type=password]:hover, input[type=password]:focus {
     border-color: #aaaaaa;
     background: #fbfbfb; }
 
-/* line 33, ../../app/stylesheets/_global.sass */
+/* line 36, ../../app/stylesheets/_global.sass */
+.bordered {
+  border: 1px solid #cccccc; }
+
+/* line 40, ../../app/stylesheets/_global.sass */
 #errorExplanation, .errorExplanation {
   color: red;
   *display: inline-block;
@@ -111,10 +120,10 @@ textarea, input[type=text], input[type=password] {
     height: 0;
     clear: both;
     visibility: hidden; }
-  /* line 37, ../../app/stylesheets/_global.sass */
+  /* line 44, ../../app/stylesheets/_global.sass */
   #errorExplanation p, .errorExplanation p {
     display: none; }
-  /* line 39, ../../app/stylesheets/_global.sass */
+  /* line 46, ../../app/stylesheets/_global.sass */
   #errorExplanation ul, .errorExplanation ul {
     color: black;
     font-size: 110%;
@@ -124,29 +133,29 @@ textarea, input[type=text], input[type=password] {
     border: 1px solid red;
     padding: 10px; }
 
-/* line 48, ../../app/stylesheets/_global.sass */
+/* line 55, ../../app/stylesheets/_global.sass */
 .fieldWithErrors {
   background: #ffcccc;
   padding: 10px; }
-  /* line 51, ../../app/stylesheets/_global.sass */
+  /* line 58, ../../app/stylesheets/_global.sass */
   .fieldWithErrors input, .fieldWithErrors textarea {
     border: 1px solid red; }
 
-/* line 54, ../../app/stylesheets/_global.sass */
+/* line 61, ../../app/stylesheets/_global.sass */
 h1 {
   font-size: 25px;
-  line-height: 25px;
+  line-height: 30px;
   font-weight: bold; }
 
-/* line 58, ../../app/stylesheets/_global.sass */
+/* line 65, ../../app/stylesheets/_global.sass */
 h2 {
   font-size: 20px;
   line-height: 20px; }
 
-/* line 62, ../../app/stylesheets/_global.sass */
+/* line 69, ../../app/stylesheets/_global.sass */
 #flash {
   border-top: 5px solid black; }
-  /* line 64, ../../app/stylesheets/_global.sass */
+  /* line 71, ../../app/stylesheets/_global.sass */
   #flash div {
     border: 5px solid black;
     border-top: none;
@@ -193,6 +202,15 @@ h2 {
     height: 0;
     clear: both;
     visibility: hidden; }
+  /* line 5, ../../app/stylesheets/_contents.sass */
+  #contents .box {
+    clear: left;
+    display: block;
+    margin: 20px 0;
+    width: 400px;
+    float: left;
+    padding: 10px;
+    border: 1px solid #cccccc; }
 
 /* line 1, ../../app/stylesheets/_footer.sass */
 #footer {
@@ -216,54 +234,59 @@ body.users #profile-fields {
 /* line 11, ../../app/stylesheets/_users.sass */
 body.users #user_address {
   height: 50px; }
-
 /* line 13, ../../app/stylesheets/_users.sass */
+body.users form {
+  margin-top: 20px; }
+  /* line 15, ../../app/stylesheets/_users.sass */
+  body.users form .replacement {
+    margin-left: 220px; }
+  /* line 17, ../../app/stylesheets/_users.sass */
+  body.users form label {
+    width: 200px;
+    display: block;
+    float: left;
+    text-align: right;
+    margin-right: 10px; }
+
+/* line 23, ../../app/stylesheets/_users.sass */
 .gravatar {
   vertical-align: middle; }
 
-/* line 1, ../../app/stylesheets/_items.sass */
-div.items {
-  clear: left;
-  display: block;
-  margin: 20px 0;
-  width: 400px;
-  float: left;
+/* line 2, ../../app/stylesheets/_items.sass */
+div.box > h2 {
+  margin-bottom: 10px; }
+/* line 4, ../../app/stylesheets/_items.sass */
+div.box > p > a {
+  float: right; }
+/* line 6, ../../app/stylesheets/_items.sass */
+div.box .item {
+  margin: 0 -10px;
   padding: 10px;
-  border: 1px solid #cccccc; }
-  /* line 9, ../../app/stylesheets/_items.sass */
-  div.items > h2 {
-    margin-bottom: 10px; }
-  /* line 11, ../../app/stylesheets/_items.sass */
-  div.items > p > a {
-    float: right; }
-  /* line 13, ../../app/stylesheets/_items.sass */
-  div.items .item {
-    margin: 0 -10px;
-    padding: 10px;
-    border-bottom: 1px dashed #cccccc;
-    background-color: #eeeeee; }
+  border-bottom: 1px dashed #cccccc;
+  background-color: #eeeeee; }
 
-/* line 1, ../../app/stylesheets/_items.sass */
-div.items {
-  clear: left;
+/* line 12, ../../app/stylesheets/_items.sass */
+#item_description {
   display: block;
-  margin: 20px 0;
-  width: 400px;
-  float: left;
+  margin-top: 10px; }
+
+/* line 2, ../../app/stylesheets/_items.sass */
+div.box > h2 {
+  margin-bottom: 10px; }
+/* line 4, ../../app/stylesheets/_items.sass */
+div.box > p > a {
+  float: right; }
+/* line 6, ../../app/stylesheets/_items.sass */
+div.box .item {
+  margin: 0 -10px;
   padding: 10px;
-  border: 1px solid #cccccc; }
-  /* line 9, ../../app/stylesheets/_items.sass */
-  div.items > h2 {
-    margin-bottom: 10px; }
-  /* line 11, ../../app/stylesheets/_items.sass */
-  div.items > p > a {
-    float: right; }
-  /* line 13, ../../app/stylesheets/_items.sass */
-  div.items .item {
-    margin: 0 -10px;
-    padding: 10px;
-    border-bottom: 1px dashed #cccccc;
-    background-color: #eeeeee; }
+  border-bottom: 1px dashed #cccccc;
+  background-color: #eeeeee; }
+
+/* line 12, ../../app/stylesheets/_items.sass */
+#item_description {
+  display: block;
+  margin-top: 10px; }
 
 /* line 2, ../../app/stylesheets/_brochure.sass */
 body.brochure p {
