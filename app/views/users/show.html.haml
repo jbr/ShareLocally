@@ -32,7 +32,7 @@
 = gravatar_for @user, :id => 'big-gravatar'
 %h1= @user
 %dl
-  -%w(phone full_name).each do |column|
+  -%w(phone full_name email).each do |column|
     %dt{:class => column}= column.humanize
     %dd{:class => column}= @user.send(column.to_sym).or_if_blank content_tag('em', "#{@user} did not provide their #{column.humanize.downcase}")
   %dt.address Address
