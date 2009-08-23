@@ -28,8 +28,7 @@ ActionMailer::Base.smtp_settings = {
   
   class ActionMailer::Base
     def deliver_with_override!(mail = @mail)
-      mail.subject = "Stormweight (Development): #{mail.to.to_sentence} #{mail.subject}"
-      mail.to = "\"#{mail.to.to_sentence}\" <jacob+development@stormweight.com>"
+      mail.to = "\"#{mail.to.to_sentence}\" <jbr@sharelocally.org>"
       deliver_without_override!(mail)
     end
     alias_method_chain :deliver!, :override

@@ -1,4 +1,25 @@
 class UserMailer < ActionMailer::Base
+  include ActionView::Helpers::TextHelper
+  
+  def self.do_batch
+    User.all.each do |user|
+      self.do_batch_request_notifications_for user
+    end
+  end
+  
+  def self.do_batch_request_notifications_for(user)
+    requests = user.incoming_requests.all :conditions => {:notification_pending => true}
+    deliver_request_notification user, requests unless requests.empty?
+    requests.each {|r| r.update_attributes :notification_pending => false}
+  end
+  
+  def request_notification(user, requests)
+    setup_email(user)
+    @subject += "#{pluralize requests.size, 'new request'}"
+    @body[:requests] = requests
+    @body[:url] = base_url
+  end
+  
   def signup_notification(user)
     setup_email(user)
     @subject    += 'Please activate your new account'

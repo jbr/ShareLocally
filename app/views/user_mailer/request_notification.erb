@@ -1,0 +1,9 @@
+Hi <%=h @user.full_name.or_if_blank(@user.login)%>!
+
+You've received <%= pluralize @requests.size, 'request'%> for your items.
+
+<% @requests.group_by(&:item).each do |item, requests|-%>
+  <%= pluralize requests.size, 'request'%> for <%=item%>: <%=requests.map(&:user).to_sentence%>
+<%end-%>
+
+<%= @url%>
