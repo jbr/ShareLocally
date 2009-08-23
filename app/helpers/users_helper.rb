@@ -13,7 +13,7 @@ module UsersHelper
   
   def gravatar_url_for(user, size)
     email_address = user.email.downcase
-    default_image = 'http://www.sharelocally.org/images/logo-small.png'
+    default_image = 'http://www.sharelocally.org/images/default-head-#{size}.png'
     "http://www.gravatar.com/avatar/#{::MD5::md5(email_address)}?d=#{default_image}&s=#{size}"
   end
 
