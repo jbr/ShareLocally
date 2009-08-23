@@ -8,7 +8,7 @@ module ItemsHelper
       "driving distance"
     else
       "probably too far"
-    end
+    end + " (#{distance.round(2)}mi)"
   rescue
     "an unknown distance"
   end

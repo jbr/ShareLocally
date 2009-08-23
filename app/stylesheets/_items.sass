@@ -13,14 +13,19 @@
       :background-color= !item_color + #090909
     &.unavailable
       :background-color= !item_color - #111
-    .distance
+    .distance, .availability
       :font-size 80%
       :font-style italic
     
-    
-#item_description
-  :display block
-  :margin-top 10px
+form
+  #item_title
+    :display block
+    :width 495px
+    :margin-bottom 10px
+  #item_description
+    :display block
+    :margin-top 10px
+    :width 495px
 
 #advanced-search
   :clear both
