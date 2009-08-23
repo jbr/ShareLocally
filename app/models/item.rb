@@ -6,10 +6,11 @@ class Item < ActiveRecord::Base
   acts_as_mappable :through => :user
   
   def self.search(string, user)
-    
     find(:all, :origin => user, :order => "distance desc", :limit => 30,
       :conditions => ["(items.title rlike :search OR items.description rlike :search) AND items.user_id <> :user_id",
-        {:search => string, :user_id => user.id}]) || []
+        {:search => string, :user_id => user.id}])
+    rescue
+      []
   end
     
   
