@@ -1,7 +1,7 @@
 .box.bordered
   - if params[:search] && @items.blank?
     %h2== Nothing found for #{params[:search]}.
-    == Can we convince you to #{link_to "add something", new_item_url} so the next person doesn't get this message?
+    == Can we convince you to #{link_to "add something", new_user_item_url(current_user)} so the next person doesn't get this message?
   = render :partial => 'items/search_form'
   #advanced-search
     = link_to 'Advanced Search', '#', :class => 'replacement'
