@@ -3,7 +3,7 @@
   %p.description= item.description
   - unless current_user == item.user
     .distance== This item is #{distance_phrase_for item} from you.
-    - if request = current_user.outgoing_requests.for(item).singular
+    - if request = current_user.outgoing_requests.first(:conditions => {:item_id => item.id})
       You have a pending request for this item.
       = link_to_remote "Retract", :url => item_request_url(item, request), :method => :delete
     - else
