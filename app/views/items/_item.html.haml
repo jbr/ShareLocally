@@ -3,8 +3,7 @@
   - if current_user == item.user
     - unless item.requests.empty? || current_page?(item_url(item))
       .pending-requests
-        = link_to "View " + pluralize(item.requests.count, "pending request"), item_url(item)
-
+        = link_to "View " + pluralize(item.requests.count, "incoming request"), item_url(item)
     = link_to "Edit item", edit_user_item_url(item.user, item), :class => 'edit-link'
   %h2.title.searchable= item.title
   %p.description.searchable= item.description
@@ -13,11 +12,12 @@
       == This item is listed as #{content_tag 'strong', "#{item.available?? '' : 'not'} available"}.
       = link_to_remote 'Change', :url => user_item_url(item.user, item, :item => {:available => !item.available?}), :method => :put
   - else
+    -if request.nil?
+      = link_to_remote 'Request', :url => item_requests_url(item), :method => :post, :html => {:class => 'request-button'}
     .availability== This item is #{content_tag 'strong', "#{item.available?? 'available' : 'unavailable'}"}.
     
     .distance== It's #{distance_phrase_for item} from you.
     - if request
-      You have a pending request for this item.
-      = link_to_remote "Retract", :url => item_request_url(item, request), :method => :delete
-    - else
-      = link_to_remote 'Request', :url => item_requests_url(item), :method => :post
+      .pending-request
+        You have an outgoing request for this item.
+        = link_to_remote "Retract", :url => item_request_url(item, request), :method => :delete, :html =>{:class => 'retract-button'}

@@ -5,6 +5,7 @@
     :float right
     :margin-top 5px
   .item
+    +clearfix
     :margin 0 -10px
     :padding 10px
     :border-bottom= "1px dashed" !border_color
@@ -26,6 +27,20 @@
       :margin-bottom 10px
       :float right
       :clear right
+    .pending-request
+      :float left
+      :border= "1px solid" !border_color
+      :font-size 80%
+      :padding 10px
+      :margin-top 5px
+      :background white
+      a
+        :display inline-block
+        :vertical-align middle
+    .image-button
+      :float left
+    .request-button
+      :float right
     &:hover
       .edit-link
         :color= !item_color - #444

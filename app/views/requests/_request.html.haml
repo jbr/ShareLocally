@@ -1,9 +1,9 @@
 .request{:id => request.element_id}
   - if current_user == request.user
     == You requested #{link_to request.item, item_url(request.item)}
-    = link_to_remote 'Retract', :url => item_request_url(request.item, request), :method => :delete
+    = link_to_remote 'Retract', :url => item_request_url(request.item, request), :method => :delete, :html => {:class => 'retract-button image-button'}
   - else
     == #{link_to_user request.user} wants to borrow #{link_to request.item, user_item_url(current_user, request.item)}
-    = link_to_remote 'Grant', :url => item_request_url(request.item, request), :method => :put
-    = link_to_remote 'Deny', :url => item_request_url(request.item, request), :method => :delete
+    = link_to_remote 'Deny', :url => item_request_url(request.item, request), :method => :delete, :html => {:class => 'deny-button image-button'}
+    = link_to_remote 'Grant', :url => item_request_url(request.item, request), :method => :put, :html => {:class => 'grant-button image-button'}
   

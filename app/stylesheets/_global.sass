@@ -29,6 +29,57 @@ textarea
 .checkbox
   :vertical-align baseline
 
+a.retract-button
+  :display block
+  :overflow hidden
+  :border none
+  :text-indent -1000px
+  :width 60px
+  :height 30px
+  :background url("/images/retract-button.png") no-repeat
+  &:hover
+    :background-position 0 -30px
+  &:active
+    :background-position 0 -60px
+a.grant-button
+  :display block
+  :border none
+  :overflow hidden
+  :text-indent -1000px
+  :width 54px
+  :height 30px
+  :background url("/images/grant-button.png") no-repeat
+  &:hover
+    :background-position 0 -30px
+  &:active
+    :background-position 0 -60px
+a.deny-button
+  :display block
+  :overflow hidden
+  :border none
+  :text-indent -1000px
+  :width 50px
+  :height 30px
+  :background url("/images/deny-button.png") no-repeat
+  &:hover
+    :background-position 0 -30px
+  &:active
+    :background-position 0 -60px
+    
+a.request-button
+  :display block
+  :overflow hidden
+  :border none
+  :text-indent -1000px
+  :width 60px
+  :height 30px
+  :background url("/images/request-button.png") no-repeat
+  &:hover
+    :background-position 0 -30px
+  &:active
+    :background-position 0 -60px
+
+
 .replace
   div
     :border= "1px solid" !border_color
