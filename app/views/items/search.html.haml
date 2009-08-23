@@ -3,7 +3,7 @@
     %h2== Nothing found for #{params[:search]}.
     == Can we convince you to #{link_to "add something", new_item_url} so the next person doesn't get this message?
   = render :partial => 'items/search_form'
-- unless params[:search] || @items.blank?
+- unless params[:search].blank? || @items.blank?
   #search-items.items.box.bordered
     %h2== Results for #{params[:search]}
     - for item in @items

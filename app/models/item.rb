@@ -7,9 +7,9 @@ class Item < ActiveRecord::Base
   
   def self.search(string, user)
     
-    find(:all, :limit => 30,
-      :conditions => ["items.title rlike :search OR items.description rlike :search",
-        {:search => string}]) || []
+    find(:all, :origin => user, :order => "distance desc", :limit => 30,
+      :conditions => ["(items.title rlike :search OR items.description rlike :search) AND items.user_id <> :user_id",
+        {:search => string, :user_id => user.id}]) || []
   end
     
   
