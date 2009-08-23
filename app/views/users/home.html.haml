@@ -1,0 +1,6 @@
+#profile-box
+  = gravatar_for @user, :id => 'big-gravatar'
+  = link_to 'Edit your profile', edit_user_url(@user)
+  = render :partial => 'users/why_profile_important'
+= render :partial => 'items/user_items'
+= render :partial => 'items/nearby_items'

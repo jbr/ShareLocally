@@ -12,6 +12,12 @@ class UsersController < ApplicationController
     end
   end
   
+  def show
+    if @user == current_user
+      render :template => 'users/home'
+    end
+  end
+  
   def edit
   end
   

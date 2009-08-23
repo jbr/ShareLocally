@@ -79,17 +79,18 @@ textarea {
 
 /* line 15, ../../app/stylesheets/_global.sass */
 a.replacement {
-  font-size: 75%; }
+  font-size: 11px;
+  line-height: 11px; }
 
-/* line 18, ../../app/stylesheets/_global.sass */
+/* line 19, ../../app/stylesheets/_global.sass */
 em, i {
   font-style: italic; }
 
-/* line 21, ../../app/stylesheets/_global.sass */
+/* line 22, ../../app/stylesheets/_global.sass */
 b, strong {
   font-weight: bold; }
 
-/* line 25, ../../app/stylesheets/_global.sass */
+/* line 26, ../../app/stylesheets/_global.sass */
 #errorExplanation, .errorExplanation {
   color: red;
   *display: inline-block;
@@ -101,10 +102,10 @@ b, strong {
     height: 0;
     clear: both;
     visibility: hidden; }
-  /* line 29, ../../app/stylesheets/_global.sass */
+  /* line 30, ../../app/stylesheets/_global.sass */
   #errorExplanation p, .errorExplanation p {
     display: none; }
-  /* line 31, ../../app/stylesheets/_global.sass */
+  /* line 32, ../../app/stylesheets/_global.sass */
   #errorExplanation ul, .errorExplanation ul {
     color: black;
     font-size: 110%;
@@ -114,29 +115,29 @@ b, strong {
     border: 1px solid red;
     padding: 10px; }
 
-/* line 40, ../../app/stylesheets/_global.sass */
+/* line 41, ../../app/stylesheets/_global.sass */
 .fieldWithErrors {
   background: #ffcccc;
   padding: 10px; }
-  /* line 43, ../../app/stylesheets/_global.sass */
+  /* line 44, ../../app/stylesheets/_global.sass */
   .fieldWithErrors input, .fieldWithErrors textarea {
     border: 1px solid red; }
 
-/* line 46, ../../app/stylesheets/_global.sass */
+/* line 47, ../../app/stylesheets/_global.sass */
 h1 {
   font-size: 25px;
   line-height: 25px;
   font-weight: bold; }
 
-/* line 50, ../../app/stylesheets/_global.sass */
+/* line 51, ../../app/stylesheets/_global.sass */
 h2 {
   font-size: 20px;
   line-height: 20px; }
 
-/* line 54, ../../app/stylesheets/_global.sass */
+/* line 55, ../../app/stylesheets/_global.sass */
 #flash {
   border-top: 5px solid black; }
-  /* line 56, ../../app/stylesheets/_global.sass */
+  /* line 57, ../../app/stylesheets/_global.sass */
   #flash div {
     border: 5px solid black;
     border-top: none;
@@ -197,20 +198,59 @@ body.users #profile-fields {
 /* line 11, ../../app/stylesheets/_users.sass */
 body.users #user_address {
   height: 50px; }
+/* line 13, ../../app/stylesheets/_users.sass */
+body.users #profile-box {
+  float: right;
+  border: 1px solid #cccccc;
+  padding: 10px; }
 
-/* line 14, ../../app/stylesheets/_users.sass */
+/* line 18, ../../app/stylesheets/_users.sass */
 .gravatar {
   vertical-align: middle; }
 
 /* line 1, ../../app/stylesheets/_items.sass */
-#items {
-  clear: both;
-  display: block; }
+div.items {
+  clear: left;
+  display: block;
+  margin: 20px 0;
+  width: 400px;
+  float: left;
+  padding: 10px;
+  border: 1px solid #cccccc; }
+  /* line 9, ../../app/stylesheets/_items.sass */
+  div.items > h2 {
+    margin-bottom: 10px; }
+  /* line 11, ../../app/stylesheets/_items.sass */
+  div.items > p > a {
+    float: right; }
+  /* line 13, ../../app/stylesheets/_items.sass */
+  div.items .item {
+    margin: 0 -10px;
+    padding: 10px;
+    border-bottom: 1px dashed #cccccc;
+    background-color: #eeeeee; }
 
 /* line 1, ../../app/stylesheets/_items.sass */
-#items {
-  clear: both;
-  display: block; }
+div.items {
+  clear: left;
+  display: block;
+  margin: 20px 0;
+  width: 400px;
+  float: left;
+  padding: 10px;
+  border: 1px solid #cccccc; }
+  /* line 9, ../../app/stylesheets/_items.sass */
+  div.items > h2 {
+    margin-bottom: 10px; }
+  /* line 11, ../../app/stylesheets/_items.sass */
+  div.items > p > a {
+    float: right; }
+  /* line 13, ../../app/stylesheets/_items.sass */
+  div.items .item {
+    margin: 0 -10px;
+    padding: 10px;
+    border-bottom: 1px dashed #cccccc;
+    background-color: #eeeeee; }
 
 /* line 2, ../../app/stylesheets/_brochure.sass */
 body.brochure p {

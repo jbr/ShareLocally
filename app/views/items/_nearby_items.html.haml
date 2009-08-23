@@ -1,0 +1,4 @@
+#nearby-items.items
+  %h2 Nearest Items
+  - for item in current_user.nearby_items
+    = render_object_partial item

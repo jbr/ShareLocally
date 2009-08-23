@@ -45,6 +45,11 @@ class User < ActiveRecord::Base
   # prevents a user from submitting a crafted form that bypasses activation
   # anything else you want your user to change should be added here.
   attr_accessible :login, :email, :name, :password, :password_confirmation
+  
+  def nearby_items(options = {})
+    options.reverse_merge! :origin => self, :order => 'distance asc', :limit => 30, :conditions => ['user_id <> ?', id]
+    Item.find :all, options
+  end
 
   def to_s() login end
 

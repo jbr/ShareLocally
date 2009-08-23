@@ -1,3 +1,17 @@
-#items
-  :clear both
+div.items
+  :clear left
   :display block
+  :margin 20px 0
+  :width 400px
+  :float left
+  :padding 10px
+  :border= "1px solid" !border_color
+  & > h2
+    :margin-bottom 10px
+  & > p > a
+    :float right
+  .item
+    :margin 0 -10px
+    :padding 10px
+    :border-bottom= "1px dashed" !border_color
+    :background-color= !item_color

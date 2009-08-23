@@ -1,13 +1,4 @@
 = gravatar_for @user, :id => 'big-gravatar'
-- current = @user == current_user
 %h1
   = @user
-  - if current
-    (you)
-
 %p#about= @user.profile.try :about
-
-- if current
-  = link_to 'Edit your profile', edit_user_url(@user)
-  = render :partial => 'users/why_profile_important'
-  = render :partial => 'items/items'
