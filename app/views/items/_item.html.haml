@@ -2,7 +2,12 @@
 .item{:id => item.element_id, :class => request ? 'requested' : ''}
   %h2.title.searchable= item.title
   %p.description.searchable= item.description
-  - unless current_user == item.user
+  - if current_user == item.user
+    = link_to "Edit", edit_user_item_url(item.user, item)
+    - unless item.requests.empty? || current_page?(item_url(item))
+      = pluralize item.requests.count, "pending request"
+      = link_to 'View', item_url(item)
+  - else
     .distance== This item is #{distance_phrase_for item} from you.
     - if request
       You have a pending request for this item.

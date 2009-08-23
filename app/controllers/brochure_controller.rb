@@ -3,7 +3,7 @@ class BrochureController < ApplicationController
     
     default = 'about'
     if params[:page].blank?
-      redirect_to lists_url and return if logged_in? && !current_user.admin?
+      redirect_to lists_url and return if logged_in?
       params[:page] = default
     end
     

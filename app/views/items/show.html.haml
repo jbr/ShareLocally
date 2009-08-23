@@ -1,5 +1,11 @@
-= render :partial => 'items/item', :locals => {:item => @item}
-- if @user
-  = link_to "All of this user's items", user_items_url(@user)
-  - if @user == current_user
-    = link_to "Edit", edit_user_item_url(@user, @item)
+= render_object_partial @item
+.item-requests
+  %h2 Users that want to borrow this item
+  - for request in @item.requests
+    .request{:id => request.element_id}
+      = link_to_user request.user
+      = link_to_remote 'Grant', :url => item_request_url(request.item, request), :method => :put
+      = link_to_remote 'Deny', :url => item_request_url(request.item, request), :method => :delete
+
+
+

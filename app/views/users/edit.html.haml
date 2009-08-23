@@ -1,5 +1,4 @@
 %h1== Your profile
-= render :partial => 'users/why_profile_important'
 
 #gravatar.box.bordered
   = gravatar_for @user
@@ -8,6 +7,8 @@
   - form_for @user do |f|
     .bordered.box= render :partial => 'users/form', :locals => {:f => f}
     #profile-fields.bordered.box
+      = render :partial => 'users/why_profile_important'
+    
       %p
         = f.label :full_name
         = f.text_field :full_name

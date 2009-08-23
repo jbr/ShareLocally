@@ -78,6 +78,10 @@ class User < ActiveRecord::Base
   def email=(value)
     write_attribute :email, (value ? value.downcase : nil)
   end
+  
+  def has_access_to_user(user)
+    !! user.requested_items.first(:conditions => {:user_id => id})
+  end
 
   protected
     

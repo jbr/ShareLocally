@@ -9,7 +9,12 @@ Rails::Initializer.run do |config|
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
   config.gem 'geokit'
-  config.active_record.observers = :user_observer
+  config.load_paths += %w( observers mailers ).map{|path| File.join(RAILS_ROOT, 'app', path)}
+  
+  config.active_record.observers = Dir["#{RAILS_ROOT}/app/observers/*.rb"].map do |f|
+    f =~ /([a-z_]+)\.rb/
+    $1.to_sym
+  end
 
   config.time_zone = 'Pacific Time (US & Canada)'
 end

@@ -90,7 +90,7 @@ class UsersController < ApplicationController
   private
   def user_must_have_access
     unless @user &&
-      (@user == current_user || @user.requested_items.first(:conditions => {:user_id => current_user.id}))
+      (@user == current_user || current_user.has_access_to_user(@user))
       access_denied
     end
   end
