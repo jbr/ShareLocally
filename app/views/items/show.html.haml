@@ -1,11 +1,12 @@
 = render_object_partial @item
-.item-requests
-  %h2 Users that want to borrow this item
-  - for request in @item.requests
-    .request{:id => request.element_id}
-      = link_to_user request.user
-      = link_to_remote 'Grant', :url => item_request_url(request.item, request), :method => :put
-      = link_to_remote 'Deny', :url => item_request_url(request.item, request), :method => :delete
+- if @item.user == current_user
+  .item-requests
+    %h2 Users that want to borrow this item
+    - for request in @item.requests
+      .request{:id => request.element_id}
+        = link_to_user request.user
+        = link_to_remote 'Grant', :url => item_request_url(request.item, request), :method => :put
+        = link_to_remote 'Deny', :url => item_request_url(request.item, request), :method => :delete
 
 
 
