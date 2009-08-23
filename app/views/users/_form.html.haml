@@ -1,11 +1,8 @@
 =f.error_messages
+
 %p
   = f.label :login
   = f.text_field :login
-
-%p
-  =f.label :email
-  = f.text_field :email
 
 %p
   = f.label :password
@@ -15,10 +12,20 @@
   = f.label :password_confirmation
   = f.password_field :password_confirmation
 
+
+%p
+  =f.label :email
+  = f.text_field :email
+
+%div
+  = link_to 'Who sees my email address?', '#', :class => 'replacement'
+  %div{:style => 'display:none'}
+    Your email address will only be visible to people whose items you request.
+
 %p
   = f.label :address
   = f.text_area :address
 %div
   = link_to 'Why does ShareLocally need my address?', '#', :class => 'replacement'
   %div{:style => 'display:none'}
-    ShareLocally is about location.
+    ShareLocally is a location-based service.  We're trying to help you share and find stuff near you, and we can't do that without your location.  If you're still worried, you can provide generic information, like city and state.

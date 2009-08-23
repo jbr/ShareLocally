@@ -32,10 +32,15 @@
 = gravatar_for @user, :id => 'big-gravatar'
 %h1= @user
 %dl
-  -%w(phone full_name email).each do |column|
+  -%w(phone full_name).each do |column|
     %dt{:class => column}= column.humanize
     %dd{:class => column}= @user.send(column.to_sym).or_if_blank content_tag('em', "#{@user} did not provide their #{column.humanize.downcase}")
-  %dt.address Address
+  %dt.email Email Address
+  %dd.email
+    - if @user.email.blank?
+      == #{@user} did not provide their email address
+    - else
+      = mail_to @user.email
   %dd.address== #{@user.address}<br> (about #{pluralize @user.distance_from(current_user).round(1), "mile"} away as the crow flies)
 %p#about= @user.profile.try(:about).or_if_blank "#{@user} did not provide an any additional information"
 -content_for :sidebar do
