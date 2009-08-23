@@ -175,7 +175,15 @@ h2 {
 /* line 1, ../../app/stylesheets/_contents.sass */
 #contents {
   margin: 30px;
-  min-height: 500px; }
+  min-height: 500px;
+  *display: inline-block; }
+  /* line 3, ../../app/stylesheets/_mixins.sass */
+  #contents:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
 
 /* line 1, ../../app/stylesheets/_footer.sass */
 #footer {
