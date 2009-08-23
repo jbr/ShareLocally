@@ -1,0 +1,6 @@
+
+- unless current_user.incoming_requests.empty?
+  #incoming-requests.box.bordered
+    - for request in current_user.incoming_requests
+      == #{link_to_user request.user} wants #{link_to request.item, user_item_url(current_user, request.item)}
+      = link_to

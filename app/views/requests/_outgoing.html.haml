@@ -1,0 +1,4 @@
+- unless current_user.outgoing_requests.empty?
+  #outgoing-requests.box.bordered
+    - for request in current_user.outgoing_requests
+      == You requested #{link_to request.item, item_url(request.item)}
