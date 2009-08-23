@@ -82,6 +82,14 @@ a.replacement {
   font-size: 75%; }
 
 /* line 18, ../../app/stylesheets/_global.sass */
+em, i {
+  font-style: italic; }
+
+/* line 21, ../../app/stylesheets/_global.sass */
+b, strong {
+  font-weight: bold; }
+
+/* line 25, ../../app/stylesheets/_global.sass */
 #errorExplanation, .errorExplanation {
   color: red;
   *display: inline-block;
@@ -93,10 +101,10 @@ a.replacement {
     height: 0;
     clear: both;
     visibility: hidden; }
-  /* line 22, ../../app/stylesheets/_global.sass */
+  /* line 29, ../../app/stylesheets/_global.sass */
   #errorExplanation p, .errorExplanation p {
     display: none; }
-  /* line 24, ../../app/stylesheets/_global.sass */
+  /* line 31, ../../app/stylesheets/_global.sass */
   #errorExplanation ul, .errorExplanation ul {
     color: black;
     font-size: 110%;
@@ -106,29 +114,29 @@ a.replacement {
     border: 1px solid red;
     padding: 10px; }
 
-/* line 33, ../../app/stylesheets/_global.sass */
+/* line 40, ../../app/stylesheets/_global.sass */
 .fieldWithErrors {
   background: #ffcccc;
   padding: 10px; }
-  /* line 36, ../../app/stylesheets/_global.sass */
+  /* line 43, ../../app/stylesheets/_global.sass */
   .fieldWithErrors input, .fieldWithErrors textarea {
     border: 1px solid red; }
 
-/* line 39, ../../app/stylesheets/_global.sass */
+/* line 46, ../../app/stylesheets/_global.sass */
 h1 {
   font-size: 25px;
   line-height: 25px;
   font-weight: bold; }
 
-/* line 43, ../../app/stylesheets/_global.sass */
+/* line 50, ../../app/stylesheets/_global.sass */
 h2 {
   font-size: 20px;
   line-height: 20px; }
 
-/* line 47, ../../app/stylesheets/_global.sass */
+/* line 54, ../../app/stylesheets/_global.sass */
 #flash {
   border-top: 5px solid black; }
-  /* line 49, ../../app/stylesheets/_global.sass */
+  /* line 56, ../../app/stylesheets/_global.sass */
   #flash div {
     border: 5px solid black;
     border-top: none;
@@ -174,7 +182,7 @@ h2 {
   text-align: center; }
 
 /* line 2, ../../app/stylesheets/_users.sass */
-body.users #gravatar {
+body.users #big-gravatar {
   float: left;
   margin: 5px; }
 /* line 5, ../../app/stylesheets/_users.sass */
@@ -190,7 +198,24 @@ body.users #profile-fields {
 body.users #user_address {
   height: 50px; }
 
+/* line 14, ../../app/stylesheets/_users.sass */
+.gravatar {
+  vertical-align: middle; }
+
 /* line 1, ../../app/stylesheets/_items.sass */
 #items {
   clear: both;
   display: block; }
+
+/* line 1, ../../app/stylesheets/_items.sass */
+#items {
+  clear: both;
+  display: block; }
+
+/* line 2, ../../app/stylesheets/_brochure.sass */
+body.brochure p {
+  margin-bottom: 10px; }
+/* line 4, ../../app/stylesheets/_brochure.sass */
+body.brochure ol {
+  list-style: decimal;
+  margin: 10px 20px; }
