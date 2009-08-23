@@ -20,7 +20,7 @@ class RequestsController < ApplicationController
       return access_denied
     end
     
-    @request.destroy
+    @success = @request.destroy
     respond_to do |format|
       format.html { redirect_to item_url(@item) }
       format.js

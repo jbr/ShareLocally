@@ -1,6 +1,3 @@
-- unless current_user.outgoing_requests.empty?
-  #outgoing-requests.box.bordered
-    - for request in current_user.outgoing_requests
-      .request{:id => request.element_id}
-        == You requested #{link_to request.item, item_url(request.item)}
-        = link_to_remote 'Retract', :url => item_request_url(request.item, request), :method => :delete
+#outgoing-requests.box.bordered{:style => current_user.outgoing_requests.empty?? 'display:none' : ''}
+  - for request in current_user.outgoing_requests
+    =render_object_partial request

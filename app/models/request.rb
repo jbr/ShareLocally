@@ -8,4 +8,9 @@ class Request < ActiveRecord::Base
   }
   
   validates_uniqueness_of :item_id, :scope => :user_id
+  validate :user_cannot_be_owner
+  
+  def user_cannot_be_owner
+    errors.add(:user, "cannot be owner") if item.user == user
+  end
 end
