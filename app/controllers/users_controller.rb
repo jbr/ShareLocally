@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
   load_resource :user, :by => :id, :only => [:suspend, :unsuspend, :destroy, :purge, :show]
   before_filter :access_denied, :only => [:new, :activate, :create], :if => :logged_in?
-  before_filter :user_must_be_current, :only => [:edit, :show, :update]
-  # before_filter :user_must_have_access, :only => :show
+  before_filter :user_must_be_current, :only => [:edit, :update]
+  before_filter :user_must_have_access, :only => :show
   
   def index
     if logged_in?
@@ -85,5 +85,13 @@ class UsersController < ApplicationController
   def purge
     @user.destroy
     redirect_to users_path
+  end
+  
+  private
+  def user_must_have_access
+    unless @user &&
+      (@user == current_user || @user.requested_items.first(:conditions => {:user_id => current_user.id}))
+      access_denied
+    end
   end
 end
