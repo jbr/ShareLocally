@@ -38,9 +38,9 @@ module UsersHelper
   
   def check_for(boolean, text, url)
     if boolean
-      "[&nbsp;&nbsp;] #{link_to text, url}"
+      "#{image_tag 'checkbox-unchecked.png', :class => 'checkbox'} #{link_to text, url}"
     else
-      "[x] #{content_tag 'strike', text}"
+      "#{image_tag 'checkbox-checked.png', :class => 'checkbox'} #{content_tag 'strike', text}"
     end
   end
 end
