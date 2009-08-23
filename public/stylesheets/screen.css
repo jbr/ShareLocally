@@ -205,6 +205,9 @@ h3 {
   #header #user_nav {
     margin: 25px;
     float: right; }
+  /* line 17, ../../app/stylesheets/_header.sass */
+  #header #search-form {
+    float: right; }
 
 /* line 1, ../../app/stylesheets/_contents.sass */
 #contents {
@@ -291,6 +294,21 @@ div.box .item {
   display: block;
   margin-top: 10px; }
 
+/* line 17, ../../app/stylesheets/_items.sass */
+#search-form {
+  *display: inline-block;
+  float: left; }
+  /* line 3, ../../app/stylesheets/_mixins.sass */
+  #search-form:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+  /* line 20, ../../app/stylesheets/_items.sass */
+  #search-form input {
+    float: left; }
+
 /* line 2, ../../app/stylesheets/_items.sass */
 div.box > h2 {
   margin-bottom: 10px; }
@@ -309,6 +327,21 @@ div.box .item {
 #item_description {
   display: block;
   margin-top: 10px; }
+
+/* line 17, ../../app/stylesheets/_items.sass */
+#search-form {
+  *display: inline-block;
+  float: left; }
+  /* line 3, ../../app/stylesheets/_mixins.sass */
+  #search-form:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+  /* line 20, ../../app/stylesheets/_items.sass */
+  #search-form input {
+    float: left; }
 
 /* line 2, ../../app/stylesheets/_brochure.sass */
 body.brochure p {

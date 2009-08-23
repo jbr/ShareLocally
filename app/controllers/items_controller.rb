@@ -7,7 +7,15 @@ class ItemsController < ApplicationController
 
   
   def index
-    @items = (@user.try(:items) || Item).find :all, :origin => current_user, :order => "distance asc", :limit => 30
+    if @user && @user == current_user
+      @items = @user.items.find :all, :origin => current_user, :order => "distance desc", :limit => 30
+    else
+      @items = Item.find :all, :origin => current_user, :order => "distance desc", :limit => 30,
+        :conditions => ["title rlike :search OR description rlike :search",
+          {:search => params[:search]}]
+      @items ||= []
+      render :template => 'items/search'
+    end
   end
   
   def show
