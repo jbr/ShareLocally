@@ -31,6 +31,13 @@ textarea, input[type=text], input[type=password]
   &:hover, &:focus
     :border-color= !border_color - #222
     :background= !input_background + #020202
+input[type=button], input[type=submit], button
+  :border "1px solid" !border_color
+  :background= !button_color
+  :padding 5px 20px
+  :display block
+  :text-align center
+  :margin auto
     
     
 .bordered
@@ -63,11 +70,13 @@ h1
   :line-height 30px
   :font-weight bold
 h2
-  :font-size 20px
+  :font-size 18px
   :line-height 25px
+  :font-weight bold
 h3
-  :font-size 15px
+  :font-size 18px
   :line-height 20px
+  :font-style italic
 
 #flash
   :border-top 5px solid black

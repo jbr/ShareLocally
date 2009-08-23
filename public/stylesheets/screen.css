@@ -61,7 +61,7 @@ img a {
 
 /* line 1, ../../app/stylesheets/_global.sass */
 a, a:visited {
-  color: blue; }
+  color: #444444; }
 
 /* line 4, ../../app/stylesheets/_global.sass */
 *:focus {
@@ -104,11 +104,20 @@ textarea, input[type=text], input[type=password] {
     border-color: #aaaaaa;
     background: #fbfbfb; }
 
-/* line 36, ../../app/stylesheets/_global.sass */
+/* line 34, ../../app/stylesheets/_global.sass */
+input[type=button], input[type=submit], button {
+  border: "1px solid" !border_color;
+  background: #cccccc;
+  padding: 5px 20px;
+  display: block;
+  text-align: center;
+  margin: auto; }
+
+/* line 43, ../../app/stylesheets/_global.sass */
 .bordered {
   border: 1px solid #cccccc; }
 
-/* line 40, ../../app/stylesheets/_global.sass */
+/* line 47, ../../app/stylesheets/_global.sass */
 #errorExplanation, .errorExplanation {
   color: red;
   *display: inline-block;
@@ -120,10 +129,10 @@ textarea, input[type=text], input[type=password] {
     height: 0;
     clear: both;
     visibility: hidden; }
-  /* line 44, ../../app/stylesheets/_global.sass */
+  /* line 51, ../../app/stylesheets/_global.sass */
   #errorExplanation p, .errorExplanation p {
     display: none; }
-  /* line 46, ../../app/stylesheets/_global.sass */
+  /* line 53, ../../app/stylesheets/_global.sass */
   #errorExplanation ul, .errorExplanation ul {
     color: black;
     font-size: 110%;
@@ -133,29 +142,36 @@ textarea, input[type=text], input[type=password] {
     border: 1px solid red;
     padding: 10px; }
 
-/* line 55, ../../app/stylesheets/_global.sass */
+/* line 62, ../../app/stylesheets/_global.sass */
 .fieldWithErrors {
   background: #ffcccc;
   padding: 10px; }
-  /* line 58, ../../app/stylesheets/_global.sass */
+  /* line 65, ../../app/stylesheets/_global.sass */
   .fieldWithErrors input, .fieldWithErrors textarea {
     border: 1px solid red; }
 
-/* line 61, ../../app/stylesheets/_global.sass */
+/* line 68, ../../app/stylesheets/_global.sass */
 h1 {
   font-size: 25px;
   line-height: 30px;
   font-weight: bold; }
 
-/* line 65, ../../app/stylesheets/_global.sass */
+/* line 72, ../../app/stylesheets/_global.sass */
 h2 {
-  font-size: 20px;
-  line-height: 20px; }
+  font-size: 18px;
+  line-height: 25px;
+  font-weight: bold; }
 
-/* line 69, ../../app/stylesheets/_global.sass */
+/* line 76, ../../app/stylesheets/_global.sass */
+h3 {
+  font-size: 18px;
+  line-height: 20px;
+  font-style: italic; }
+
+/* line 81, ../../app/stylesheets/_global.sass */
 #flash {
   border-top: 5px solid black; }
-  /* line 71, ../../app/stylesheets/_global.sass */
+  /* line 83, ../../app/stylesheets/_global.sass */
   #flash div {
     border: 5px solid black;
     border-top: none;
@@ -194,7 +210,8 @@ h2 {
 #contents {
   margin: 30px;
   min-height: 500px;
-  *display: inline-block; }
+  *display: inline-block;
+  width: 500px; }
   /* line 3, ../../app/stylesheets/_mixins.sass */
   #contents:after {
     content: " ";
@@ -202,12 +219,12 @@ h2 {
     height: 0;
     clear: both;
     visibility: hidden; }
-  /* line 5, ../../app/stylesheets/_contents.sass */
+  /* line 6, ../../app/stylesheets/_contents.sass */
   #contents .box {
     clear: left;
     display: block;
-    margin: 20px 0;
-    width: 400px;
+    margin: 10px 0;
+    width: 500px;
     float: left;
     padding: 10px;
     border: 1px solid #cccccc; }
@@ -219,36 +236,39 @@ h2 {
   clear: both; }
 
 /* line 2, ../../app/stylesheets/_users.sass */
-body.users #big-gravatar {
-  float: left;
-  margin: 5px; }
-/* line 5, ../../app/stylesheets/_users.sass */
 body.users h1 {
   margin: 10px; }
-/* line 7, ../../app/stylesheets/_users.sass */
+/* line 4, ../../app/stylesheets/_users.sass */
 body.users #form {
   clear: both; }
-/* line 9, ../../app/stylesheets/_users.sass */
-body.users #profile-fields {
-  margin-top: 30px; }
-/* line 11, ../../app/stylesheets/_users.sass */
+/* line 6, ../../app/stylesheets/_users.sass */
 body.users #user_address {
   height: 50px; }
-/* line 13, ../../app/stylesheets/_users.sass */
+/* line 8, ../../app/stylesheets/_users.sass */
+body.users #gravatar-box {
+  float: left;
+  margin: 5px; }
+/* line 11, ../../app/stylesheets/_users.sass */
 body.users form {
   margin-top: 20px; }
-  /* line 15, ../../app/stylesheets/_users.sass */
+  /* line 13, ../../app/stylesheets/_users.sass */
   body.users form .replacement {
     margin-left: 220px; }
-  /* line 17, ../../app/stylesheets/_users.sass */
+  /* line 15, ../../app/stylesheets/_users.sass */
   body.users form label {
     width: 200px;
     display: block;
     float: left;
+    clear: left;
     text-align: right;
     margin-right: 10px; }
+  /* line 22, ../../app/stylesheets/_users.sass */
+  body.users form input[type=text], body.users form input[type=password], body.users form textarea {
+    vertical-align: middle;
+    width: 200px;
+    padding: 2px; }
 
-/* line 23, ../../app/stylesheets/_users.sass */
+/* line 26, ../../app/stylesheets/_users.sass */
 .gravatar {
   vertical-align: middle; }
 
@@ -257,15 +277,16 @@ div.box > h2 {
   margin-bottom: 10px; }
 /* line 4, ../../app/stylesheets/_items.sass */
 div.box > p > a {
-  float: right; }
-/* line 6, ../../app/stylesheets/_items.sass */
+  float: right;
+  margin-top: 5px; }
+/* line 7, ../../app/stylesheets/_items.sass */
 div.box .item {
   margin: 0 -10px;
   padding: 10px;
   border-bottom: 1px dashed #cccccc;
   background-color: #eeeeee; }
 
-/* line 12, ../../app/stylesheets/_items.sass */
+/* line 13, ../../app/stylesheets/_items.sass */
 #item_description {
   display: block;
   margin-top: 10px; }
@@ -275,15 +296,16 @@ div.box > h2 {
   margin-bottom: 10px; }
 /* line 4, ../../app/stylesheets/_items.sass */
 div.box > p > a {
-  float: right; }
-/* line 6, ../../app/stylesheets/_items.sass */
+  float: right;
+  margin-top: 5px; }
+/* line 7, ../../app/stylesheets/_items.sass */
 div.box .item {
   margin: 0 -10px;
   padding: 10px;
   border-bottom: 1px dashed #cccccc;
   background-color: #eeeeee; }
 
-/* line 12, ../../app/stylesheets/_items.sass */
+/* line 13, ../../app/stylesheets/_items.sass */
 #item_description {
   display: block;
   margin-top: 10px; }

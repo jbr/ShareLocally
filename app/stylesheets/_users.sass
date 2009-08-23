@@ -1,15 +1,13 @@
 body.users
-  #big-gravatar
-    :float left
-    :margin 5px
   h1
     :margin 10px
   #form
     :clear both
-  #profile-fields
-    :margin-top 30px
   #user_address
     :height 50px
+  #gravatar-box
+    :float left
+    :margin 5px
   form
     :margin-top 20px
     .replacement
@@ -18,7 +16,12 @@ body.users
       :width 200px
       :display block
       :float left
+      :clear left
       :text-align right
       :margin-right 10px
+    input[type=text], input[type=password], textarea
+      :vertical-align middle
+      :width 200px
+      :padding 2px
 .gravatar
   :vertical-align middle

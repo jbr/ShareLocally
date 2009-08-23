@@ -1,11 +1,13 @@
-= gravatar_for @user
-%h1== Editing profile for #{@user}
+%h1== Your profile
 = render :partial => 'users/why_profile_important'
-== Want to change your photo? #{link_to 'Get a gravatar', 'http://en.gravatar.com/site/signup'}
+
+#gravatar.box.bordered
+  = gravatar_for @user
+  == Want to change your photo? #{link_to 'Get a gravatar', 'http://en.gravatar.com/site/signup'}
 #form
   - form_for @user do |f|
-    = render :partial => 'users/form', :locals => {:f => f}
-    #profile-fields
+    .bordered.box= render :partial => 'users/form', :locals => {:f => f}
+    #profile-fields.bordered.box
       %p
         = f.label :full_name
         = f.text_field :full_name
