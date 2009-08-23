@@ -20,7 +20,7 @@ class UserMailer < ActionMailer::Base
   def new_message_notification(message)
     setup_email(message.to_user)
     @body[:message] = message
-    @body[:url] = "#{base_url}/messages/#{message.to_param}"
+    @body[:url] = "#{base_url}/users/#{message.to_user.to_param}/messages/#{message.to_param}"
     from "#{message.from_user} <sharelocally@sharelocally.com>"
     @subject += "New Message from #{message.from_user}"
   end
