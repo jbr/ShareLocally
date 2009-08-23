@@ -6,8 +6,8 @@ module ItemsHelper
       "walking distance"
     when 1
       "driving distance"
-    when 2
-      "pretty far"
+    else
+      "probably too far"
     end
   end
 end
