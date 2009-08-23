@@ -25,6 +25,8 @@ class UsersController < ApplicationController
   
   def new
     @user = User.new :address => session[:geo_location]
+    pp session[:geo_location].class.name
+    pp session[:geo_location].methods - Object.methods
   end
  
   def create
