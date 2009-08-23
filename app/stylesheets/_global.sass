@@ -2,7 +2,7 @@ a, a:visited
   :color= !link_color
   
 *:focus
-  outline: blue solid medium
+  :outline= !border_color "solid medium"
 
 body
   :padding 10px 30px
@@ -21,6 +21,13 @@ em, i
 
 b, strong
   :font-weight bold
+  
+textarea, input[type=text], input[type=password]
+  :border= "1px solid" !border_color
+  :background= !input_background
+  &:hover, &:focus
+    :border-color= !border_color - #222
+    :background= !input_background + #020202
 
   
 #errorExplanation, .errorExplanation

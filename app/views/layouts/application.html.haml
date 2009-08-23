@@ -16,6 +16,7 @@
       - [:error, :notice].each do |type|
         - unless flash[type].blank?
           %div{:id => type}= flash[type]
+    #sidebar= yield :sidebar
     #contents= yield
     #footer
       %p= link_to 'Official ShareLocally Rumble Blog', 'http://sharelocally.wordpress.com/'

@@ -65,7 +65,7 @@ a, a:visited {
 
 /* line 4, ../../app/stylesheets/_global.sass */
 *:focus {
-  outline: blue solid medium; }
+  outline: #cccccc solid medium; }
 
 /* line 7, ../../app/stylesheets/_global.sass */
 body {
@@ -90,7 +90,16 @@ em, i {
 b, strong {
   font-weight: bold; }
 
-/* line 26, ../../app/stylesheets/_global.sass */
+/* line 25, ../../app/stylesheets/_global.sass */
+textarea, input[type=text], input[type=password] {
+  border: 1px solid #cccccc;
+  background: #f9f9f9; }
+  /* line 28, ../../app/stylesheets/_global.sass */
+  textarea:hover, textarea:focus, input[type=text]:hover, input[type=text]:focus, input[type=password]:hover, input[type=password]:focus {
+    border-color: #aaaaaa;
+    background: #fbfbfb; }
+
+/* line 33, ../../app/stylesheets/_global.sass */
 #errorExplanation, .errorExplanation {
   color: red;
   *display: inline-block;
@@ -102,10 +111,10 @@ b, strong {
     height: 0;
     clear: both;
     visibility: hidden; }
-  /* line 30, ../../app/stylesheets/_global.sass */
+  /* line 37, ../../app/stylesheets/_global.sass */
   #errorExplanation p, .errorExplanation p {
     display: none; }
-  /* line 32, ../../app/stylesheets/_global.sass */
+  /* line 39, ../../app/stylesheets/_global.sass */
   #errorExplanation ul, .errorExplanation ul {
     color: black;
     font-size: 110%;
@@ -115,29 +124,29 @@ b, strong {
     border: 1px solid red;
     padding: 10px; }
 
-/* line 41, ../../app/stylesheets/_global.sass */
+/* line 48, ../../app/stylesheets/_global.sass */
 .fieldWithErrors {
   background: #ffcccc;
   padding: 10px; }
-  /* line 44, ../../app/stylesheets/_global.sass */
+  /* line 51, ../../app/stylesheets/_global.sass */
   .fieldWithErrors input, .fieldWithErrors textarea {
     border: 1px solid red; }
 
-/* line 47, ../../app/stylesheets/_global.sass */
+/* line 54, ../../app/stylesheets/_global.sass */
 h1 {
   font-size: 25px;
   line-height: 25px;
   font-weight: bold; }
 
-/* line 51, ../../app/stylesheets/_global.sass */
+/* line 58, ../../app/stylesheets/_global.sass */
 h2 {
   font-size: 20px;
   line-height: 20px; }
 
-/* line 55, ../../app/stylesheets/_global.sass */
+/* line 62, ../../app/stylesheets/_global.sass */
 #flash {
   border-top: 5px solid black; }
-  /* line 57, ../../app/stylesheets/_global.sass */
+  /* line 64, ../../app/stylesheets/_global.sass */
   #flash div {
     border: 5px solid black;
     border-top: none;
@@ -207,13 +216,8 @@ body.users #profile-fields {
 /* line 11, ../../app/stylesheets/_users.sass */
 body.users #user_address {
   height: 50px; }
-/* line 13, ../../app/stylesheets/_users.sass */
-body.users #profile-box {
-  float: right;
-  border: 1px solid #cccccc;
-  padding: 10px; }
 
-/* line 18, ../../app/stylesheets/_users.sass */
+/* line 13, ../../app/stylesheets/_users.sass */
 .gravatar {
   vertical-align: middle; }
 
@@ -268,3 +272,29 @@ body.brochure p {
 body.brochure ol {
   list-style: decimal;
   margin: 10px 20px; }
+
+/* line 1, ../../app/stylesheets/_sidebar.sass */
+#sidebar {
+  float: right;
+  *display: inline-block;
+  width: 300px;
+  margin: 50px; }
+  /* line 3, ../../app/stylesheets/_mixins.sass */
+  #sidebar:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+  /* line 6, ../../app/stylesheets/_sidebar.sass */
+  #sidebar .box {
+    *display: inline-block;
+    border: 1px solid #cccccc;
+    padding: 10px; }
+    /* line 3, ../../app/stylesheets/_mixins.sass */
+    #sidebar .box:after {
+      content: " ";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
