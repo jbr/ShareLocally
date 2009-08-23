@@ -20,7 +20,8 @@
         - unless flash[type].blank?
           %div{:id => type}= flash[type]
     #sidebar
-      = render :partial => 'users/to_do_next'
+      -if logged_in?
+        = render :partial => 'users/to_do_next'
       = yield :sidebar
     #contents= yield
     #footer

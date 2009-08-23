@@ -4,7 +4,7 @@
   = gravatar_for @user
   == Want to change your photo? #{link_to 'Get a gravatar', 'http://en.gravatar.com/site/signup'}
 #form
-  - form_for @user do |f|
+  - form_for @user, :html => {:id => 'user-form'} do |f|
     .bordered.box= render :partial => 'users/form', :locals => {:f => f}
     #profile-fields.bordered.box
       = render :partial => 'users/why_profile_important'

@@ -1,6 +1,6 @@
 class Item < ActiveRecord::Base
   belongs_to :user
-  has_many :requests
+  has_many :requests, :dependent => :destroy
   
   validates_presence_of :user
   acts_as_mappable :through => :user

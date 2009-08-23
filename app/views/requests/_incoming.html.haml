@@ -1,4 +1,9 @@
 - unless current_user.incoming_requests.empty?
   #incoming-requests.box.bordered
-    - for request in current_user.incoming_requests
+    - limit ||= nil
+    - for request in current_user.incoming_requests.all :limit => limit, :order => 'id desc'
       = render_object_partial request
+    - if limit
+      - if (count = current_user.incoming_requests.count - limit) > 0
+        == #{count} more
+      = link_to 'See all', user_incoming_requests_url(current_user)

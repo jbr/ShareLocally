@@ -1,3 +1,8 @@
 #outgoing-requests.box.bordered{:style => current_user.outgoing_requests.empty?? 'display:none' : ''}
-  - for request in current_user.outgoing_requests
+  - limit ||= nil
+  - for request in current_user.outgoing_requests.all :limit => limit, :order => 'id desc'
     =render_object_partial request
+  - if limit
+    - if (count = current_user.outgoing_requests.count - limit) > 0
+      == #{count} more
+    = link_to 'See all', user_outgoing_requests_url(current_user)

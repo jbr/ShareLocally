@@ -10,6 +10,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :users, :member => { :suspend => :put, :unsuspend => :put, :purge => :delete } do |user|
     user.resources :items
     user.resources :messages
+    user.resources :incoming_requests, :controller => 'requests', :requirements => {:request_direction => 'incoming'}
+    user.resources :outgoing_requests, :controller => 'requests', :requirements => {:request_direction => 'outgoing'}
   end
   
   map.resources :requests

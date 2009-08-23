@@ -2,12 +2,13 @@ class UserMailer < ActionMailer::Base
   include ActionView::Helpers::TextHelper
   
   def self.do_batch
-    User.all.each do |user|
+    User.all(:conditions => {:receives_request_notifications => true}).each do |user|
       self.do_batch_request_notifications_for user
     end
   end
   
   def self.do_batch_request_notifications_for(user)
+    return unless user.receives_request_notifications?
     requests = user.incoming_requests.all :conditions => {:notification_pending => true}
     deliver_request_notification user, requests unless requests.empty?
     requests.each {|r| r.update_attributes :notification_pending => false}

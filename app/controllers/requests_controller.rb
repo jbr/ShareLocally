@@ -1,7 +1,13 @@
 class RequestsController < ApplicationController
   before_filter :login_required
+  load_resource :user
   load_resource :item, :if_nil => :access_denied
-  load_resource :request, :by => :id, :only => :destroy 
+  load_resource :request, :by => :id, :only => :destroy
+  
+  def index
+    return access_denied unless @user && %w(incoming outgoing).include?(params[:request_direction])
+    @requests = @user.send :"#{params[:request_direction]}_requests"
+  end
   
   def create
     @request = @item.requests.build :user => current_user

@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  geocode_ip_address
+  
   load_resource :user, :by => :id, :only => [:suspend, :unsuspend, :destroy, :purge, :show]
   before_filter :access_denied, :only => [:new, :activate, :create], :if => :logged_in?
   before_filter :user_must_be_current, :only => [:edit, :update]
@@ -22,7 +24,7 @@ class UsersController < ApplicationController
   end
   
   def new
-    @user = User.new
+    @user = User.new :address => session[:geo_location]
   end
  
   def create
@@ -89,7 +91,7 @@ class UsersController < ApplicationController
   
   private
   def user_must_have_access
-    unless @user &&
+    unless @user && current_user &&
       (@user == current_user || current_user.has_access_to_user(@user))
       access_denied
     end

@@ -10,10 +10,19 @@ body.users
   #gravatar-box
     :float left
     :margin 5px
-  form.edit_user, form.new_user
+  form.edit_user, form.new_user, form#user-form
     :margin-top 20px
     .replacement
       :margin-left 220px
+    .notifications
+      input
+        :float left
+      .replace
+        a
+          :margin-left 25px
+          :float left
+        div
+          :margin-top 100px
     label
       :width 200px
       :display block
