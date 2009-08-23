@@ -1,8 +1,11 @@
 - request = current_user.outgoing_requests.first(:conditions => {:item_id => item.id})
-.item{:id => item.element_id, :class => request ? 'requested' : ''}
+.item{:id => item.element_id, :class => "#{request ? 'requested' : ''} #{item.available?? 'available' : 'unavailable'}"}
   %h2.title.searchable= item.title
   %p.description.searchable= item.description
   - if current_user == item.user
+    .availability
+      == This item is listed as #{content_tag 'strong', "#{item.available?? '' : 'not'} available"}.
+      = link_to_remote 'Change', :url => user_item_url(item.user, item, :item => {:available => !item.available?}), :method => :put
     = link_to "Edit", edit_user_item_url(item.user, item)
     - unless item.requests.empty? || current_page?(item_url(item))
       = pluralize item.requests.count, "pending request"

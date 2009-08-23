@@ -40,7 +40,13 @@ class ItemsController < ApplicationController
     @success = @item.save
     respond_to do |format|
       format.html do
-        @success ? redirect_to(user_item_url(@user, @item)) : render(:action => :new)
+        if @success
+          flash[:notice] = "Thanks! #{@item} saved."
+          redirect_to(new_user_item_url(@user))
+        else
+          flash[:error] = "Whoops, something went wrong.  Let's take a look"
+          render(:action => :new)
+        end
       end
       format.js
     end
