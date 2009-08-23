@@ -1,33 +1,34 @@
-=f.error_messages
+.bordered.box
+  =f.error_messages
 
-%p
-  = f.label :login
-  = f.text_field :login
+  %p
+    = f.label :login
+    = f.text_field :login
 
-%p
-  = f.label :password
-  = f.password_field :password
+  %p
+    = f.label :password
+    = f.password_field :password
 
-%p
-  = f.label :password_confirmation
-  = f.password_field :password_confirmation
+  %p
+    = f.label :password_confirmation
+    = f.password_field :password_confirmation
 
-%p
-  =f.label :email
-  = f.text_field :email
-- replacement_link 'Who sees my email address?' do
-  Your email address will not be displayed anywhere on the site.  ShareLocally provides an email proxy system so that your address is protected.
+  %div
+    =f.label :email
+    = f.text_field :email
+    - replacement_link 'Who sees my email address?' do
+      Your email address will not be displayed anywhere on the site.  ShareLocally provides an email proxy system so that your address is protected.
     
 
-.notifications
-  = f.label :receives_request_notifications, "Receive batched notifications when people request your items?"
-  = f.check_box :receives_request_notifications
+  .notifications
+    = f.label :receives_request_notifications, "Receive batched notifications when people request your items?"
+    = f.check_box :receives_request_notifications
 
-  - replacement_link 'How often do notifications go out?' do
-    Request notifications are sent every hour on the hour and provide a summary of that period of activity.
+    - replacement_link 'How often do notifications go out?' do
+      Request notifications are sent every hour on the hour and provide a summary of that period of activity.
 
-%p
-  = f.label :address
-  = f.text_area :address
-- replacement_link 'Why does ShareLocally need my address?' do
-  ShareLocally is a location-based service.  We're trying to help you share and find stuff near you, and we can't do that without your location.  If you're still worried, you can provide generic information, like city and state.
+  %div
+    = f.label :address
+    = f.text_area :address
+    - replacement_link 'Why does ShareLocally need my address?' do
+      ShareLocally is a location-based service.  We're trying to help you share and find stuff near you, and we can't do that without your location.  If you're still worried, you can provide generic information, like city and state.
