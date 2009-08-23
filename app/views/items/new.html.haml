@@ -1,5 +1,7 @@
+- if flash[:notice]
+  = link_to "That's enough of this.  Take me home.", user_url(current_user)
 .bordered.box
   %h1 Share something locally
   - form_for @item, :url => user_items_url(@user) do |f|
     = render :partial => 'items/form', :locals => {:f => f}
-    = f.submit 'Create'
+    = f.submit 'Create', :class => 'save-button'

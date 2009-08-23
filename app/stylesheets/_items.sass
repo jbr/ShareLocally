@@ -16,7 +16,24 @@
     .distance, .availability
       :font-size 80%
       :font-style italic
-    
+    .edit-link
+      :color= !item_color - #222
+      :float right
+      :display block
+    .pending-requests a
+      :display block
+      :font-size 80%
+      :margin-bottom 10px
+      :float right
+      :clear right
+    &:hover
+      .edit-link
+        :color= !item_color - #444
+        &:hover
+          :color= !link_color
+#user-items
+  .edit-link
+    :clear right
 form
   #item_title
     :display block
@@ -44,11 +61,11 @@ body.items.index #search-form
       :height 35px
       :margin-top -5px
       :text-indent -1000px
-      :width 65px
+      :width 66px
       :border none
-      :background url("/images/search.png")
+      :background url("/images/search-button.png") no-repeat
       &:hover
-        :background-position 0 -34px
+        :background-position 0 -35px
       &:active
-        :background-position 0 35px
+        :background-position 0 -70px
     

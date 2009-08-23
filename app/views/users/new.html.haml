@@ -2,5 +2,5 @@
 
 - form_for :user, :url => users_path, :html => {:id => 'user-form'} do |f|
   = render :partial => 'users/form', :locals => {:f => f}
-  = f.submit 'Sign up'
+  = f.submit 'Sign up', :id => 'sign-up-button'
   
