@@ -3,4 +3,4 @@
     == Logged in as #{link_to_user current_user}
     == #{link_to "Log out", session_url, :method => :delete, :id => 'log-out'}
   - else
-    == #{link_to "Log in",  login_path} | #{link_to "Sign up", signup_path}
+    == #{link_to "Log in",  login_path, :id => 'log-in-link'} | #{link_to "Sign up", signup_path, :id => 'sign-up-link'}
