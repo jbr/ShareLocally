@@ -1,7 +1,8 @@
 #outgoing-requests.box.bordered{:style => current_user.outgoing_requests.empty?? 'display:none' : ''}
   - limit ||= nil
-  - for request in current_user.outgoing_requests.all :limit => limit, :order => 'id desc'
-    =render_object_partial request
+  .requests
+    - for request in current_user.outgoing_requests.all :limit => limit, :order => 'id desc'
+      =render_object_partial request
   - if limit
     - if (count = current_user.outgoing_requests.count - limit) > 0
       == #{count} more

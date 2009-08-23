@@ -2,7 +2,7 @@ if @success
   page <<<<-END_JS
     $('#outgoing-requests:not(:visible)').show('blind');
     $(#{render_object_partial @request, :to => :json})
-      .appendTo('#outgoing-requests')
+      .appendTo('#outgoing-requests .requests')
       .show('blind');
     $('##{@request.item.element_id}').replaceWith(#{render_object_partial @request.item, :to => :json})
   END_JS
