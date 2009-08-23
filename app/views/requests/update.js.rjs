@@ -1,5 +1,0 @@
-page <<<<-END_JS
-  $('##{@request.element_id}')
-    .replaceWith(#{render_object_partial @request, :to => :json})
-  $('##{@request.element_id}').highlight();
-END_JS

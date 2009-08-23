@@ -1,45 +1,28 @@
 class RequestsController < ApplicationController
-  load_resource :request, :by => :id
-  
-  def index
-    @requests = Request.all
-  end
-  
-  def show
-  end
-  
-  def new
-    @request = Request.new
-  end
-  
-  def edit
-  end
-  
-  def update
-    @success = @request.update_attributes params[:request]
-    respond_to do |format|
-      format.html do
-        @success ? redirect_to(request_url(@request)) : render(:action => :edit)
-      end
-      format.js
-    end
-  end
+  before_filter :login_required
+  load_resource :item, :if_nil => :access_denied
+  load_resource :request, :by => :id, :only => :destroy 
   
   def create
-    @request = Request.new params[:request]
+    @request = @item.requests.build :user => current_user
     @success = @request.save
     respond_to do |format|
       format.html do
-        @success ? redirect_to(request_url(@request)) : render(:action => :new)
+        flash[:error] = "You have already requested #{@item}." unless @success
+        redirect_to item_url(@item)
       end
       format.js
     end
   end
   
   def destroy
+    unless [@request.user, @request.item.user].include? current_user
+      return access_denied
+    end
+    
     @request.destroy
     respond_to do |format|
-      format.html { redirect_to requests_url }
+      format.html { redirect_to item_url(@item) }
       format.js
     end
   end

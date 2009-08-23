@@ -1,4 +1,0 @@
-- form_for @request do |f|
-  = render :partial => 'requests/form', :locals => {:f => f}
-  = f.submit 'Save Changes'
-= link_to "&times; Delete", request_url(@request), :method => :delete

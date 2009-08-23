@@ -1,4 +1,4 @@
 #search-form
   - form_tag items_url, :method => :get do
-    %input{:type => :search, :placeholder => 'search', :name => :search, :value => params[:search]}
+    = text_field_tag :search, params[:search]
     = submit_tag 'Search', :name => 'c'

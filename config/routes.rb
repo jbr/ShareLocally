@@ -6,14 +6,16 @@ ActionController::Routing::Routes.draw do |map|
   map.activate '/activate/:activation_code', :controller => 'users', :action => "activate"
   
   map.brochure '/pages/*page', :controller => "brochure"
-  map.resources :forgotten_passwords
   
   map.resources :users, :member => { :suspend => :put, :unsuspend => :put, :purge => :delete } do |user|
     user.resources :items
-    user.resources :requests
   end
+  
+  map.resources :requests
     
-  map.resources :items
+  map.resources :items do |item|
+    item.resources :requests
+  end
 
   map.resource :session
 
