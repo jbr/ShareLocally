@@ -1,3 +1,5 @@
+-walking = current_user.distance_from(@user) < 1
+
 -content_for :head do
   =javascript_include_tag "http://maps.google.com/maps?file=api&amp;v=2&amp;key=#{Geokit::Geocoders::google}&sensor=true"
   :javascript
@@ -18,6 +20,10 @@
         var you = new GLatLng(#{current_user.lat}, #{current_user.lng});
         map.addOverlay(new GMarker(you, { icon: youIcon }));
         
+        directions = new GDirections(map, document.getElementById("directions"));
+        directions.load("from: #{current_user.lat}, #{current_user.lng} (#{current_user.login}) to: #{@user.lat}, #{@user.lng} (#{@user.login})",
+          {travelMode:"#{walking ? 'G_TRAVEL_MODE_WALKING' : 'G_TRAVEL_MODE_DRIVING'}"});
+        
         
         map.setCenter(them, 13);
         map.setUIToDefault();
@@ -30,8 +36,13 @@
     %dt{:class => column}= column.humanize
     %dd{:class => column}= @user.send(column.to_sym).or_if_blank content_tag('em', "#{@user} did not provide their #{column.humanize.downcase}")
   %dt.address Address
-  %dd.address== #{@user.address}<br> (about #{pluralize @user.distance_from(current_user).round(1), "mile"} away)
+  %dd.address== #{@user.address}<br> (about #{pluralize @user.distance_from(current_user).round(1), "mile"} away as the crow flies)
 %p#about= @user.profile.try(:about).or_if_blank "#{@user} did not provide an any additional information"
 -content_for :sidebar do
-  #map_canvas{:style => "width: 300px; height: 300px"}
+  .box.bordered
+    #map_canvas{:style => "width: 280px; height: 280px"}
+    %h2== #{walking ? "Walking" : "Driving"} Directions
+    = link_to "View at Google Maps", " http://maps.google.com/maps?f=q&source=s_q&hl=en&q=#{CGI::escape "from: #{current_user.address} (#{current_user.full_name.or_if_blank current_user.login}) to: #{@user.address} (#{@user.full_name.or_if_blank @user.login})"}", :target => "_blank"
+    #directions
+  
   
