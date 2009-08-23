@@ -4,5 +4,5 @@ $(function(){
     $(this).next('div:not(:visible)').show().end().remove();
     return false;
   })
-  $('#search-items .item').highlightRegex(new RegExp($('#search-items #query').text()));
+  $('#search-items .item .searchable').highlightRegex(new RegExp($('#search-items #query').text()));
 })

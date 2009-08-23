@@ -1,6 +1,6 @@
 .item{:id => item.element_id}
-  %h2.title= item.title
-  %p.description= item.description
+  %h2.title.searchable= item.title
+  %p.description.searchable= item.description
   - unless current_user == item.user
     .distance== This item is #{distance_phrase_for item} from you.
     - if request = current_user.outgoing_requests.first(:conditions => {:item_id => item.id})
