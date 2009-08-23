@@ -13,8 +13,11 @@ class User < ActiveRecord::Base
   has_many :outgoing_requests, :class_name => 'Request'
   has_many :requested_items, :through => :outgoing_requests, :source => :item
   
+  has_many :incoming_messages, :class_name => 'Message', :foreign_key => :to_user_id
+  
   accepts_nested_attributes_for :profile
   attr_accessible :profile_attributes, :phone, :full_name, :address
+  
   
   include Authentication
   include Authentication::ByPassword

@@ -9,6 +9,7 @@ ActionController::Routing::Routes.draw do |map|
   
   map.resources :users, :member => { :suspend => :put, :unsuspend => :put, :purge => :delete } do |user|
     user.resources :items
+    user.resources :messages
   end
   
   map.resources :requests

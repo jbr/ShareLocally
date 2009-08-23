@@ -27,16 +27,28 @@ body.users
       :padding 2px
   &.show
     dl
-      +clearfix
+      div.email
+        :float left
+        :margin-top -25px
+        .replacement
+          :margin-left 120px
+          :clear left
+          :display block
+        div
+          :clear left
+          :margin 10px 0
+            :left 120px
       dt, dd
         :float left
         :margin-bottom 10px
+        :height 30px
       dt
         :margin-right 20px
         :clear left
         :font-weight bold
         :width 100px
     #about
+      :clear left
       :margin-top 10px
 .gravatar
   :vertical-align middle

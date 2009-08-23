@@ -1,0 +1,7 @@
+%ol
+  - for message in @messages
+    %li{:id => message.element_id}
+      = link_to message, user_message_url(current_user, message)
+      = button_to_remote 'Delete', :url => user_message_url(current_user, message), :method => :delete, :confirm => "Really?"
+  - if @messages.empty?
+    ==No messages.  Go #{link_to 'share', new_user_item_url(current_user)} some stuff or #{link_to 'find something nearby', items_url}!

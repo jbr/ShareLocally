@@ -1,0 +1,5 @@
+.message{:id => message.element_id}
+  %h1= message.title
+  .from= link_to_user message.from_user
+  .body= message.body
+  =link_to "Delete", user_messages_url(current_user, message), :method => :delete, :confirm => "Really?"

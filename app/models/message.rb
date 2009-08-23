@@ -5,6 +5,7 @@ class Message < ActiveRecord::Base
   validates_presence_of :from_user
   validates_presence_of :to_user
   
+  def to_s() title end
   
   def self.relay
     imap = Net::IMAP.new('imap.gmail.com', '993', true)
