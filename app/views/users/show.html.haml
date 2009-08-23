@@ -1,7 +1,37 @@
+-content_for :head do
+  =javascript_include_tag "http://maps.google.com/maps?file=api&amp;v=2&amp;key=#{Geokit::Geocoders::google}&sensor=true"
+  :javascript
+    $(function(){
+      if (GBrowserIsCompatible()) {
+        var map = new GMap2(document.getElementById("map_canvas"));
+        var themIcon = new GIcon(G_DEFAULT_ICON);
+        themIcon.image = "#{gravatar_url_for @user, 20}";
+        themIcon.iconSize = new GSize(20, 20);
+
+        var them = new GLatLng(#{@user.lat}, #{@user.lng});
+        map.addOverlay(new GMarker(them, { icon: themIcon }));
+      
+        var youIcon = new GIcon(G_DEFAULT_ICON);
+        youIcon.image = "#{gravatar_url_for current_user, 20}";
+        youIcon.iconSize = new GSize(20, 20);
+
+        var you = new GLatLng(#{current_user.lat}, #{current_user.lng});
+        map.addOverlay(new GMarker(you, { icon: youIcon }));
+        
+        
+        map.setCenter(them, 13);
+        map.setUIToDefault();
+      }
+    })
 = gravatar_for @user, :id => 'big-gravatar'
 %h1= @user
 %dl
-  -%w(address phone full_name).each do |column|
+  -%w(phone full_name).each do |column|
     %dt{:class => column}= column.humanize
     %dd{:class => column}= @user.send(column.to_sym).or_if_blank content_tag('em', "#{@user} did not provide their #{column.humanize.downcase}")
-%p#about= @user.profile.try(:about).or_if_blank "#{content_tag 'strong', @user} did not provide an any additional information"
+  %dt.address Address
+  %dd.address== #{@user.address}<br> (about #{pluralize @user.distance_from(current_user).round(1), "mile"} away)
+%p#about= @user.profile.try(:about).or_if_blank "#{@user} did not provide an any additional information"
+-content_for :sidebar do
+  #map_canvas{:style => "width: 300px; height: 300px"}
+  

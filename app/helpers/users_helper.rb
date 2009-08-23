@@ -6,10 +6,15 @@ module UsersHelper
   
   def gravatar_for(user, options = {})
     size = options.delete(:size) || 80
+    url = gravatar_url_for(user, size)
     options[:class] ||= 'gravatar'
+    image_tag url, options
+  end
+  
+  def gravatar_url_for(user, size)
     email_address = user.email.downcase
-    default_image = image_tag 'logo-small.png'
-    image_tag "http://www.gravatar.com/avatar/#{::MD5::md5(email_address)}?d=#{default_image}&s=#{size}", options
+    default_image = 'http://www.sharelocally.org/images/logo-small.png'
+    "http://www.gravatar.com/avatar/#{::MD5::md5(email_address)}?d=#{default_image}&s=#{size}"
   end
 
   def if_authorized?(action, resource, &block)
