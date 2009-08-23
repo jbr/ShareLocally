@@ -52,7 +52,7 @@ class User < ActiveRecord::Base
   attr_accessible :login, :email, :name, :password, :password_confirmation
   
   def nearby_items(options = {})
-    options.reverse_merge! :origin => self, :order => 'distance desc', :limit => 30, :conditions => ['user_id <> ?', id]
+    options.reverse_merge! :origin => self, :order => 'distance', :limit => 10, :within => 50, :conditions => ['user_id <> ?', id]
     Item.find :all, options
   end
 
