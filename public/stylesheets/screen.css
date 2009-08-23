@@ -188,7 +188,8 @@ h2 {
 /* line 1, ../../app/stylesheets/_footer.sass */
 #footer {
   border-top: 5px solid black;
-  text-align: center; }
+  text-align: center;
+  clear: both; }
 
 /* line 2, ../../app/stylesheets/_users.sass */
 body.users #big-gravatar {
