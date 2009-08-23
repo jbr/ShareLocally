@@ -10,10 +10,7 @@ class ItemsController < ApplicationController
     if @user && @user == current_user
       @items = @user.items.find :all, :origin => current_user, :order => "distance desc", :limit => 30
     else
-      @items = Item.find :all, :origin => current_user, :order => "distance desc", :limit => 30,
-        :conditions => ["title rlike :search OR description rlike :search",
-          {:search => params[:search]}]
-      @items ||= []
+      @items = Item.search params[:search], current_user
       render :template => 'items/search'
     end
   end
