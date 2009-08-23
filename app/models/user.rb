@@ -18,6 +18,8 @@ class User < ActiveRecord::Base
   accepts_nested_attributes_for :profile
   attr_accessible :profile_attributes, :phone, :full_name, :address
   
+  delegate :about, :to => :profile
+  
   
   include Authentication
   include Authentication::ByPassword
