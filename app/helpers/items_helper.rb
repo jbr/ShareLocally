@@ -9,5 +9,7 @@ module ItemsHelper
     else
       "probably too far"
     end
+  rescue
+    "an unknown distance"
   end
 end
