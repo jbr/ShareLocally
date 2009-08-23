@@ -12,7 +12,7 @@
     #header
       = link_to 'ShareLocally', '/', :id => 'logo'
       = render :partial => 'users/user_nav'
-      - unless current_page? items_url
+      - if logged_in? && !current_page? items_url 
         = render :partial => 'items/search_form'
     #flash
       - [:error, :notice].each do |type|
