@@ -16,6 +16,10 @@ module NavigationHelpers
       new_session_path
     when /(?:the )?about page/
       brochure_path :page => 'about'
+    when /(.+)'s new item page$/i
+      new_user_item_path(User.find_by_login($1))
+    when /(.+)'s home page$/i
+      user_path(User.find_by_login($1))
     
     # Add more mappings here.
     # Here is a more fancy example:
