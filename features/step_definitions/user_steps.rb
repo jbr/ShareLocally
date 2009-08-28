@@ -7,3 +7,7 @@ end
 Given /^user "(.+)" is activated$/ do |login|
   User.find_by_login(login).activate!
 end
+
+Given /^there is not a user "(.+)"$/ do |login|
+  User.find_by_login(login).try :destroy
+end

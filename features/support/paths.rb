@@ -14,6 +14,8 @@ module NavigationHelpers
       new_user_path
     when /log in/
       new_session_path
+    when /(?:the )?about page/
+      brochure_path :page => 'about'
     
     # Add more mappings here.
     # Here is a more fancy example:
