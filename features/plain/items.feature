@@ -4,8 +4,9 @@ Feature: Item sharing
   I want to be able to share items
   
   Scenario: Adding a new item
-    Given I am logged in as "example"
-    When I go to the homepage
+    Given there is a user "example"
+    And user "example" is activated
+    When I log in as "example"
     And I follow "Share some stuff!"
     And I fill in "item_title" with "my item"
     And I press "Save"

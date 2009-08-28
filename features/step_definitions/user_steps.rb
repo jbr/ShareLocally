@@ -13,12 +13,11 @@ Given /^there is not a user "(.+)"$/ do |login|
 end
 
 
-Given /^I am logged in as "(.+)"$/ do |login|
-  u = User.create! :login => login, :password => 'password', :password_confirmation => 'password', :email => "#{login}@example.com", :address => "san francisco"
-  u.register!
-  u.activate!
+Given /^I log in as "(.+)"$/ do |login|
+  get '/logout'
   visit new_session_path
-  fill_in 'login', :with => u.login
+  fill_in 'login', :with => login
   fill_in 'password', :with => 'password'
-  click_button 'Log in'
+  click_button 'log-in-button'
 end
+

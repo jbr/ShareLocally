@@ -6,13 +6,13 @@ Feature: Sign Up
   Scenario: Successful sign up
     Given there is not a user "test"
     When I go to the homepage
-    And I follow "Sign Up"
+    And I follow "sign-up-link"
     And I fill in "login" with "test"
     And I fill in "email" with "test@example.com"
     And I fill in "password" with "password"
     And I fill in "user_password_confirmation" with "password"
     And I fill in "address" with "San Francisco"
-    And I press "Sign up"
+    And I press "sign-up-button"
     Then I should see "Thanks for signing up!"
     And I should see "We just sent an email to test@example.com"
     And I should be on the about page
@@ -25,7 +25,7 @@ Feature: Sign Up
     And I fill in "password" with "password"
     And I fill in "user_password_confirmation" with "password"
     And I fill in "address" with "San Francisco"
-    And I press "Sign up"
+    And I press "sign-up-button"
     Then I should see "Email has already been taken"
   
   Scenario: Confirmation password doesn't match
@@ -35,7 +35,7 @@ Feature: Sign Up
     And I fill in "password" with "password"
     And I fill in "user_password_confirmation" with "not the same password"
     And I fill in "address" with "San Francisco"
-    And I press "Sign up"
+    And I press "sign-up-button"
     Then I should see "Password doesn't match confirmation"
 
   Scenario: Email is not a real email address
@@ -45,5 +45,5 @@ Feature: Sign Up
     And I fill in "password" with "password"
     And I fill in "user_password_confirmation" with "password"
     And I fill in "address" with "San Francisco"
-    And I press "Sign up"
+    And I press "sign-up-button"
     Then I should see "Email should look like an email address"
