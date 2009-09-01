@@ -1,0 +1,13 @@
+development:
+  address: sharelocally-dev@sharelocally.org
+  password: 3F3543
+
+test: &TEST
+  address: sharelocally-test@sharelocally.org
+  password: 83V528
+
+cucumber:
+  <<: *TEST
+
+selenium:
+  <<: *TEST

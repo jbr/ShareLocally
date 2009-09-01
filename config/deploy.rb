@@ -1,12 +1,14 @@
 set :application, "sharelocally"
 set :deploy_to, "/var/www/apps/#{application}"
 default_run_options[:pty] = true
-set :repository,  "git@github.com:railsrumble/rr09-team-237.git"
+set :repository,  "git@github.com:jbr/ShareLocally.git"
 set :scm, "git"
 
 role :app, "sharelocally.org"
 role :web, "sharelocally.org"
 role :db,  "sharelocally.org", :primary => true
+
+after 'deploy:symlink', 'deploy:copy_config_files'
 
 namespace :deploy do
   task :restart do
@@ -19,6 +21,10 @@ namespace :deploy do
   
   task :stop do
     sudo "monit -g sharelocally stop all"
+  end
+  
+  task :copy_config_files do
+    run "cp #{shared_path}/config/* #{current_path}/config"
   end
 end
 

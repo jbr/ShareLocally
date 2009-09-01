@@ -1,4 +1,5 @@
 class Message < ActiveRecord::Base
+  cattr_accessor :settings
   belongs_to :from_user, :class_name => 'User'
   belongs_to :to_user, :class_name => 'User'
   
@@ -9,7 +10,7 @@ class Message < ActiveRecord::Base
   
   def self.relay
     imap = Net::IMAP.new('imap.gmail.com', '993', true)
-    imap.login('sharelocally@sharelocally.org','sh4rel0cally')
+    imap.login Message.settings[:address], Message.settings[:password]
     imap.select('Inbox')
     rejected_count = sent_count = 0
     messages = imap.uid_search(["NOT", "DELETED"]).map do |m|
